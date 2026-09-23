@@ -215,13 +215,6 @@
 
     if (!searchInput || !dropdown) return;
 
-    const sitePersonas = [
-      { label: "🪩 I'm new to NUS Arts", keywords: ["new", "nus", "freshman", "orientation"], url: "/" },
-      { label: "🎬 I want to organise a production", keywords: ["production", "organise", "booking", "theatre"], url: "/venue" },
-      { label: "💰 I'm handling club finances", keywords: ["finance", "claims", "grant", "budget"], url: "/funding" },
-      { label: "🎭 I'm looking for performance opportunities", keywords: ["performance", "audition", "talent"], url: "/student-groups" }
-    ];
-
     const GITHUB_JSON_URL = "https://raw.githubusercontent.com/henghengyh/nus-cfa-artcyclopedia/main/search-index.json";
     let scrapedDatabase = [];
 
@@ -307,40 +300,39 @@
     }
 
     searchInput.addEventListener('focus', () => {
-      if (!searchInput.value.trim()) {
-        updateDropdown(sitePersonas, "Select Your Profile / Need");
+      if (searchInput.value.trim()) {
+        dropdown.style.display = 'block';
+      } else {
+        dropdown.innerHTML = '';
+        dropdown.style.display = 'none';
       }
-      dropdown.style.display = 'block';
     });
 
     searchInput.addEventListener('input', (e) => {
       const query = e.target.value.toLowerCase().trim();
       if (!query) {
-        updateDropdown(sitePersonas, "Select Your Profile / Need");
+        dropdown.innerHTML = '';
+        dropdown.style.display = 'none';
         return;
       }
 
-      let matches = sitePersonas.filter(item => 
-        item.label.toLowerCase().includes(query) || item.keywords.some(k => k.includes(query))
-      );
+      dropdown.style.display = 'block';
 
-      if (matches.length === 0 && scrapedDatabase.length > 0) {
-        matches = scrapedDatabase
-          .filter(page => {
-            const contentText = page.content ? page.content.toLowerCase() : "";
-            const titleText = page.title ? page.title.toLowerCase() : "";
-            return contentText.includes(query) || titleText.includes(query);
-          })
-          .map(page => {
-            const contentStr = page.content || "";
-            const rawSnippet = getSnippet(contentStr, query);
-            return { 
-              label: `📄 ${page.title}`, 
-              url: page.url,
-              snippet: rawSnippet
-            };
-          });
-      }
+      let matches = scrapedDatabase
+        .filter(page => {
+          const contentText = page.content ? page.content.toLowerCase() : "";
+          const titleText = page.title ? page.title.toLowerCase() : "";
+          return contentText.includes(query) || titleText.includes(query);
+        })
+        .map(page => {
+          const contentStr = page.content || "";
+          const rawSnippet = getSnippet(contentStr, query);
+          return { 
+            label: `📄 ${page.title}`, 
+            url: page.url,
+            snippet: rawSnippet
+          };
+        });
 
       updateDropdown(matches, "Search Results", query);
     });
