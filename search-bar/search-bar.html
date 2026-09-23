@@ -1,344 +1,72 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<div class="clean-search-container">
-  <div class="search-box-wrapper">
-    <div class="input-container">
-      <input 
-        type="text" 
-        id="directSearchInput" 
-        placeholder="Search pages, venues, student groups..." 
-        autocomplete="off"
-      >
-      <div class="search-icon-placeholder">🔍</div>
-      <div class="search-kbd">🔎</div>
-    </div>
-    <div id="dynamicDropdown" class="dynamic-menu"></div>
-  </div>
-</div>
-
-<style>
-  html, body, .clean-search-container { overflow: visible !important; }
-  
-  .clean-search-container { 
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif !important;
-    color: #1e293b; 
-    max-width: 650px; 
-    margin: 20px auto; 
-    padding: 0px 10px 10px 10px; /* (top right bottom left) */
-    padding-bottom: 450px; 
-  }
-  
-  .search-box-wrapper { 
-    position: relative; 
-    width: 100%; 
-    overflow: visible !important; 
-  }
-  
-  .input-container { 
-    position: relative; 
-    overflow: visible !important;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* ========================================================
-     STATE 1: STATIONARY (Idle) - Solid and highly readable 
-     ======================================================== */
-  #directSearchInput { 
-    font-family: "Poppins", sans-serif !important;
-    width: 100%; 
-    padding: 14px 16px 14px 44px; 
-    font-size: 0.95rem; 
-    color: #0f172a; /* Dark text for high contrast */
-    
-    /* 85% opacity background so background colors don't wash out the text */
-    background-color: rgba(255, 255, 255, 0.85) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    
-    /* Slightly stronger border for definition when idle */
-    border: 1px solid rgba(148, 163, 184, 0.35) !important; 
-    border-radius: 14px; 
-    box-sizing: border-box; 
-    outline: none; 
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Highly visible, readable placeholder styling for the idle state */
-  #directSearchInput::placeholder {
-    color: #475569 !important; /* Muted dark slate */
-    opacity: 0.85 !important;
-  }
-  #directSearchInput::-webkit-input-placeholder {
-    color: #475569 !important;
-    opacity: 0.85 !important;
-  }
-  #directSearchInput::-moz-placeholder {
-    color: #475569 !important;
-    opacity: 0.85 !important;
-  }
-  
-  /* ========================================================
-     STATE 2: ACTIVE (Focused) - Premium highlight & blue ring pop
-     ======================================================== */
-  #directSearchInput:focus { 
-    /* Near solid white background for maximum focus readability */
-    background-color: rgba(255, 255, 255, 0.98) !important;
-    /* Royal blue theme highlight border */
-    border-color: rgba(0, 61, 124, 0.6) !important; 
-    /* Soft shadow ring glow + deeper lift shadow */
-    box-shadow: 0 0 0 4px rgba(0, 61, 124, 0.08), 0 12px 30px rgba(0, 0, 0, 0.06) !important;
-  }
-  
-  /* Slightly darker placeholders on focus */
-  #directSearchInput:focus::placeholder {
-    color: #0f172a !important;
-    opacity: 0.5 !important;
-  }
-
-  .search-icon-placeholder {
-    position: absolute;
-    left: 16px;
-    font-size: 1.05rem;
-    pointer-events: none;
-    opacity: 0.7; /* Slightly darkened for contrast */
-  }
-  
-  .search-kbd {
-    position: absolute;
-    right: 16px;
-    font-size: 0.95rem;
-    pointer-events: none;
-    opacity: 0.6; /* Slightly darkened for contrast */
-  }
-  
-  /* ========================================================
-     DROPDOWN PANEL: Premium Translucent Glassmorphism Reverted 🌟
-     ======================================================== */
-  .dynamic-menu { 
-    display: none; 
-    position: absolute; 
-    top: calc(100% + 10px); 
-    left: 0; 
-    right: 0; 
-    
-    /* Reverted back to gorgeous translucent white (55%) */
-    background: rgba(255, 255, 255, 0.55) !important; 
-    /* Reverted to premium heavy density blur */
-    backdrop-filter: blur(28px) !important;
-    -webkit-backdrop-filter: blur(28px) !important;
-    
-    /* Clean reflective white border edge */
-    border: 1px solid rgba(255, 255, 255, 0.5) !important; 
-    border-radius: 16px; 
-    
-    /* Multi-layered sharp shadow depth styling */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 
-                0 20px 40px -5px rgba(0, 0, 0, 0.08),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
-    z-index: 999999 !important; 
-    max-height: 380px; 
-    overflow-y: auto;
-    padding: 8px;
-  }
-  
-  /* Sleek Typography for Titles */
-  .menu-section-title { 
-    font-family: "Poppins", sans-serif !important;
-    padding: 10px 12px 6px 12px; 
-    font-size: 0.7rem; 
-    letter-spacing: 0.08em;
-    text-transform: uppercase; 
-    color: #475569; 
-    font-weight: 700; 
-    opacity: 0.9;
-  }
-  
-  /* Smooth Hover Rows */
-  .dropdown-link-item { 
-    display: block; 
-    padding: 11px 14px; 
-    color: #334155; 
-    cursor: pointer; 
-    border-radius: 10px;
-    margin-bottom: 3px;
-    background: transparent;
-    transition: all 0.2s ease;
-  }
-  
-  .dropdown-link-item:hover { 
-    /* Slightly translucent slate layer for hovering inside glass */
-    background: rgba(241, 245, 249, 0.6); 
-  }
-  .dropdown-link-item:hover .item-title { 
-    color: #003d7c; 
-  }
-  
-  .item-title { 
-    font-family: "Poppins", sans-serif !important;
-    font-size: 0.9rem; 
-    font-weight: 600; 
-    margin-bottom: 3px; 
-    color: #0f172a; 
-  }
-  
-  .item-snippet { 
-    font-family: "Poppins", sans-serif !important;
-    font-size: 0.8rem; 
-    color: #475569; 
-    line-height: 1.45; 
-  }
-  
-  /* Soft Amber Keyword Highlights */
-  .search-highlight { 
-    color: #b45309; 
-    font-weight: 600; 
-    background-color: rgba(254, 243, 199, 0.85); 
-    padding: 1px 5px; 
-    border-radius: 4px; 
-  }
-  
-  .no-results { 
-    font-family: "Poppins", sans-serif !important;
-    padding: 24px 14px; 
-    color: #64748b; 
-    text-align: center; 
-    font-size: 0.9rem; 
-  }
-</style>
-
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById('directSearchInput');
-    const dropdown = document.getElementById('dynamicDropdown');
+(function () {
+  function init() {
+    if (document.getElementById('floating-site-search')) return;
 
-    if (!searchInput || !dropdown) return;
+    var font = document.createElement('link');
+    font.rel = 'stylesheet';
+    font.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
+    document.head.appendChild(font);
 
-    const GITHUB_JSON_URL = "https://raw.githubusercontent.com/henghengyh/nus-cfa-artcyclopedia/main/search-index.json";
-    let scrapedDatabase = [];
+    var style = document.createElement('style');
+    style.textContent = `
+      #floating-site-search{position:fixed;top:130px;right:20px;z-index:999999;width:min(325px,calc(100vw - 40px));font-family:Poppins,Arial,sans-serif;color:#1e293b}
+      #floating-site-search .input-container{position:relative}
+      #floating-site-search input {box-sizing: border-box;width: 100%;padding: 14px 44px;font: 15px Poppins, Arial, sans-serif;color: #0f172a;background: rgba(255, 255, 255, 0.58);border: 1px solid rgba(255, 255, 255, 0.7);border-radius: 14px;outline: 0;backdrop-filter: blur(16px) saturate(150%);-webkit-backdrop-filter: blur(16px) saturate(150%);box-shadow:0 8px 24px rgba(15, 23, 42, 0.12),inset 0 1px 0 rgba(255, 255, 255, 0.8);}
+      #floating-site-search input:focus{border-color:rgba(0,61,124,.6);box-shadow:0 0 0 4px rgba(0,61,124,.08),0 12px 30px rgba(0,0,0,.08)}
+      #floating-site-search .icon {display: block;position: absolute;left: 15px;top: 50%;z-index: 5;width: 15px;height: 15px;transform: translateY(-55%);box-sizing: border-box;border: 2px solid #2563eb;border-radius: 50%;background: #dbeafe;pointer-events: none;}
+      #floating-site-search .icon::after {content: "";display: block;position: absolute;right: -6px;bottom: -4px;width: 8px;height: 2px;background: #9333ea;border-radius: 2px;transform: rotate(45deg);transform-origin: left center;}
+      #floating-site-search .menu {display: none;position: absolute;top: calc(100% + 10px);left: 0;right: 0;max-height: 380px;overflow: auto;padding: 8px;background: rgba(255, 255, 255, 0.62);border: 1px solid rgba(255, 255, 255, 0.7);border-radius: 16px;backdrop-filter: blur(16px) saturate(150%);-webkit-backdrop-filter: blur(16px) saturate(150%);box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);}
+      #floating-site-search .title{padding:10px 12px 6px;font-size:11px;font-weight:700;letter-spacing:.08em;color:#475569;text-transform:uppercase}
+      #floating-site-search .item{padding:11px 14px;margin-bottom:3px;border-radius:10px;cursor:pointer}
+      #floating-site-search .item:hover{background:#f1f5f9}
+      #floating-site-search .item-title{font-weight:600;color:#0f172a}
+      #floating-site-search .item-text{margin-top:3px;font-size:13px;line-height:1.45;color:#475569}
+      #floating-site-search .empty{padding:24px 14px;text-align:center;color:#64748b}
+      @media(max-width:600px){#floating-site-search{top:10px;right:10px;left:10px;width:auto}}
+    `;
+    document.head.appendChild(style);
 
-    async function loadSearchDatabase() {
-      try {
-        const res = await fetch(GITHUB_JSON_URL);
-        if (res.ok) scrapedDatabase = await res.json();
-      } catch (e) { console.error("Database loading deferred.", e); }
-    }
-    loadSearchDatabase();
+    var root = document.createElement('div');
+    root.id = 'floating-site-search';
+    root.innerHTML = '<div class="input-container"><span class="icon" aria-hidden="true"></span><input type="text" placeholder="Search" autocomplete="off"><div class="menu"></div></div>';
+    document.body.appendChild(root);
 
-    function getSnippet(content, query) {
-      if (!content) return "";
-      const index = content.toLowerCase().indexOf(query);
-      if (index === -1) return content.substring(0, 80) + "...";
-      
-      const start = Math.max(0, index - 40);
-      const end = Math.min(content.length, index + query.length + 60);
-      
-      let snippet = content.substring(start, end);
-      if (start > 0) snippet = "..." + snippet;
-      if (end < content.length) snippet = snippet + "...";
-      
-      return snippet;
-    }
+    var input = root.querySelector('input');
+    var menu = root.querySelector('.menu');
+    var pages = [];
 
-    function highlightText(text, query) {
-      if (!text) return "";
-      const escapedQuery = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-      const regex = new RegExp(`(${escapedQuery})`, 'gi');
-      return text.replace(regex, `<span class="search-highlight">$1</span>`);
-    }
+    fetch('https://raw.githubusercontent.com/henghengyh/nus-cfa-artcyclopedia/main/search-index.json')
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (data) { pages = Array.isArray(data) ? data : []; })
+      .catch(function () { pages = []; });
 
-    function updateDropdown(items, titleText, query = "") {
-      dropdown.innerHTML = '';
-      if (items.length === 0) {
-        dropdown.innerHTML = '<div class="no-results">No matching keywords found on site.</div>';
-        return;
-      }
-
-      const header = document.createElement('div');
-      header.className = 'menu-section-title';
-      header.textContent = titleText;
-      dropdown.appendChild(header);
-
-      items.forEach(item => {
-        const itemRow = document.createElement('div');
-        itemRow.className = 'dropdown-link-item';
-        
-        const titleDiv = document.createElement('div');
-        titleDiv.className = 'item-title';
-        titleDiv.innerHTML = query ? highlightText(item.label, query) : item.label;
-        itemRow.appendChild(titleDiv);
-
-        if (item.snippet) {
-          const snippetDiv = document.createElement('div');
-          snippetDiv.className = 'item-snippet';
-          snippetDiv.innerHTML = highlightText(item.snippet, query);
-          itemRow.appendChild(snippetDiv);
-        }
-
-        itemRow.onclick = function() {
-          let targetUrl = item.url;
-          
-          if (targetUrl.startsWith('/')) {
-            targetUrl = 'https://nus-cac.com' + targetUrl;
-          } else if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
-            targetUrl = 'https://nus-cac.com/' + targetUrl;
-          }
-
-          try {
-            if (window.top && window.top.location) {
-              window.top.location.href = targetUrl;
-            } else {
-              window.location.href = targetUrl;
-            }
-          } catch(err) {
-            window.location.href = targetUrl;
-          }
+    function showResults() {
+      var query = input.value.trim().toLowerCase();
+      menu.innerHTML = '';
+      if (!query) { menu.style.display = 'none'; return; }
+      var matches = pages.filter(function (page) {
+        return String(page.title || '').toLowerCase().includes(query) || String(page.content || '').toLowerCase().includes(query);
+      });
+      menu.style.display = 'block';
+      if (!matches.length) { menu.innerHTML = '<div class="empty">No matching keywords found on site.</div>'; return; }
+      menu.innerHTML = '<div class="title">Search results</div>';
+      matches.forEach(function (page) {
+        var item = document.createElement('div');
+        item.className = 'item';
+        item.innerHTML = '<div class="item-title">📄 ' + String(page.title || '') + '</div><div class="item-text">' + String(page.content || '').slice(0,120) + '</div>';
+        item.onclick = function () {
+          var url = String(page.url || '');
+          if (url.startsWith('/')) url = window.location.origin + url;
+          else if (!/^https?:\/\//.test(url)) url = window.location.origin + '/' + url;
+          if (url) window.location.href = url;
         };
-        dropdown.appendChild(itemRow);
+        menu.appendChild(item);
       });
     }
-
-    searchInput.addEventListener('focus', () => {
-      if (searchInput.value.trim()) {
-        dropdown.style.display = 'block';
-      } else {
-        dropdown.innerHTML = '';
-        dropdown.style.display = 'none';
-      }
-    });
-
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase().trim();
-      if (!query) {
-        dropdown.innerHTML = '';
-        dropdown.style.display = 'none';
-        return;
-      }
-
-      dropdown.style.display = 'block';
-
-      let matches = scrapedDatabase
-        .filter(page => {
-          const contentText = page.content ? page.content.toLowerCase() : "";
-          const titleText = page.title ? page.title.toLowerCase() : "";
-          return contentText.includes(query) || titleText.includes(query);
-        })
-        .map(page => {
-          const contentStr = page.content || "";
-          const rawSnippet = getSnippet(contentStr, query);
-          return { 
-            label: `📄 ${page.title}`, 
-            url: page.url,
-            snippet: rawSnippet
-          };
-        });
-
-      updateDropdown(matches, "Search Results", query);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.search-box-wrapper')) dropdown.style.display = 'none';
-    });
-  });
+    input.addEventListener('input', showResults);
+    document.addEventListener('click', function (e) { if (!root.contains(e.target)) menu.style.display = 'none'; });
+  }
+  if (document.body) init(); else document.addEventListener('DOMContentLoaded', init, { once: true });
+}());
 </script>
