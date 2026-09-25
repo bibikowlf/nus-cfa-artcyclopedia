@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>NUS artcyclopedia · Venues</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@500;700&display=swap"
+    />
+    <style>
+      :root {
+        --ink: #23306b;
+        --pink: #ff5fa2;
+        --sky: #4fc3ff;
+        --sun: #ffe14d;
+        --mint: #6fe3c1;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 12px);
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+        font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+        font-weight: 500;
+        background-image:
+          radial-gradient(rgba(79, 195, 255, 0.28) 22%, transparent 24%),
+          radial-gradient(rgba(255, 95, 162, 0.2) 22%, transparent 24%);
+        background-size: 24px 24px;
+        background-position:
+          0 0,
+          12px 12px;
+      }
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 20px 16px 60px;
+      }
+      .logo {
+        font-family: "Dela Gothic One", sans-serif;
+        font-size: clamp(20px, 5vw, 34px);
+        line-height: 1;
+        transform: rotate(-2deg);
+        display: inline-flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+          drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
+          drop-shadow(4px 5px 0 var(--ink));
+      }
+      .logo b,
+      .logo i {
+        font-weight: 400;
+        font-style: normal;
+        -webkit-text-stroke: 3px var(--ink);
+        paint-order: stroke fill;
+      }
+      .logo b {
+        color: var(--sun);
+        font-size: 1.6em;
+      }
+      .logo i {
+        color: var(--pink);
+      }
+      h2,
+      h3 {
+        font-family: "Dela Gothic One", sans-serif;
+        font-weight: 400;
+        margin: 0;
+      }
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--pink);
+        outline-offset: 3px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .venues {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .places {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+      @media (max-width: 820px) {
+        .venues {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .places {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .venues {
+          grid-template-columns: 1fr;
+        }
+        .places {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .card {
+        font: inherit;
+        color: var(--ink);
+        text-align: left;
+        padding: 0;
+        background: #fff;
+        border: 4px solid var(--ink);
+        border-radius: 22px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 6px 6px 0 var(--mint);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .card:hover {
+        transform: translate(-2px, -3px);
+        box-shadow: 8px 9px 0 var(--mint);
+      }
+      .card[aria-expanded="true"] {
+        background: var(--sun);
+        box-shadow: 6px 6px 0 var(--pink);
+      }
+      .cover {
+        aspect-ratio: 4/3;
+        display: grid;
+        place-items: center;
+        font-size: 44px;
+        color: #fff;
+        background: var(--g);
+        overflow: hidden;
+      }
+      .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .card h2 {
+        font-size: clamp(16px, 2.4vw, 20px);
+        padding: 12px 14px 2px;
+      }
+      .card small {
+        display: block;
+        padding: 0 14px 12px;
+        font-weight: 700;
+        opacity: 0.75;
+      }
+
+      .place {
+        font: inherit;
+        font-size: 13px;
+        color: var(--ink);
+        cursor: pointer;
+        background: #fff;
+        border: 2px solid var(--ink);
+        border-radius: 12px;
+        padding: 8px 4px;
+        text-align: center;
+        box-shadow: 3px 3px 0 var(--sky);
+        transition: transform 0.2s;
+      }
+      .place:hover {
+        transform: translateY(-3px);
+      }
+      .place[aria-expanded="true"] {
+        background: var(--pink);
+        color: #fff;
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+      .place b {
+        display: block;
+        font-family: "Dela Gothic One", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.2;
+      }
+
+      .panel {
+        grid-column: 1/-1;
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        border: 4px solid var(--ink);
+        border-radius: 26px;
+        padding: 20px;
+        margin: 6px 0 10px;
+        box-shadow: 8px 8px 0 var(--pink);
+        animation: open 0.35s cubic-bezier(0.2, 1.2, 0.4, 1);
+      }
+      .panel.sub {
+        border-radius: 20px;
+        box-shadow: 6px 6px 0 var(--sky);
+        background: #f4fbff;
+      }
+      @keyframes open {
+        from {
+          opacity: 0;
+          transform: translateY(-14px) scale(0.98);
+        }
+      }
+      .panel:before {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: calc((var(--col) + 0.5) / var(--cols) * 100%);
+        width: 26px;
+        height: 26px;
+        background: inherit;
+        border: 4px solid var(--ink);
+        border-right: 0;
+        border-bottom: 0;
+        transform: translateX(-50%) rotate(45deg);
+        border-radius: 6px 0 0 0;
+      }
+      .close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid var(--ink);
+        background: var(--sun);
+        font: 700 18px/1 inherit;
+        color: var(--ink);
+        cursor: pointer;
+        z-index: 20;
+      }
+
+      h3.t {
+        font-size: clamp(20px, 3.4vw, 28px);
+        color: var(--pink);
+        -webkit-text-stroke: 2px var(--ink);
+        paint-order: stroke fill;
+      }
+      .tabs {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 3;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        background: #fff;
+        margin: -4px 0 14px;
+        padding: 4px 46px 12px 0;
+        border-bottom: 3px dashed var(--sky);
+      }
+      .tabs .lbl {
+        font-weight: 700;
+        font-size: 13px;
+        opacity: 0.7;
+        margin-right: 2px;
+      }
+      .tab {
+        font: inherit;
+        font-weight: 700;
+        color: var(--ink);
+        background: #fff;
+        border: 3px solid var(--ink);
+        border-radius: 99px;
+        padding: 5px 16px;
+        cursor: pointer;
+      }
+      .tab[aria-current="true"] {
+        background: var(--sun);
+        box-shadow: 3px 3px 0 var(--pink);
+      }
+      .vinfo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 4px 14px;
+        margin-bottom: 14px;
+      }
+      .vinfo p {
+        margin: 0;
+        font-weight: 700;
+      }
+      .grp {
+        margin-bottom: 16px;
+      }
+      .grp:last-child {
+        margin-bottom: 0;
+      }
+      .grp h4 {
+        margin: 0 0 8px;
+        font-family: "Dela Gothic One", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--pink);
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background: rgba(35, 48, 107, 0.55);
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        animation: fadein 0.2s;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+      }
+      .overlay .panel.sub {
+        position: relative;
+        max-width: 480px;
+        width: 100%;
+        max-height: min(84vh, 640px);
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin: 0;
+        padding: 20px 22px;
+        border-radius: 24px;
+        box-shadow: 8px 8px 0 var(--pink);
+        animation: pop 0.25s cubic-bezier(0.3, 1.4, 0.4, 1);
+      }
+      .overlay .panel.sub::-webkit-scrollbar {
+        display: none;
+      }
+      .overlay .panel.sub:before {
+        display: none;
+      }
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: scale(0.9) translateY(10px);
+        }
+      }
+      .ph {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        padding-right: 44px;
+        margin-bottom: 6px;
+      }
+      .ph small {
+        font-weight: 700;
+        opacity: 0.7;
+      }
+      .dl {
+        display: grid;
+        grid-template-columns: 104px 1fr;
+        margin: 0;
+      }
+      .dl dt,
+      .dl dd {
+        padding: 10px 0;
+        border-top: 2px dashed #c9d3f5;
+        margin: 0;
+      }
+      .dl dt {
+        font-weight: 700;
+        color: var(--pink);
+        font-size: 14px;
+      }
+      .dl dd {
+        font-size: 15px;
+      }
+      .pshot {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: 3px solid var(--ink);
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        background: var(--g, linear-gradient(135deg, #ff5fa2, #ffe14d));
+        display: grid;
+        place-items: center;
+        font-size: 34px;
+        color: #fff;
+      }
+      .pshot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hours {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .hours li {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .book {
+        display: inline-block;
+        margin-top: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #fff;
+        background: var(--pink);
+        border: 3px solid var(--ink);
+        border-radius: 99px;
+        padding: 6px 16px;
+        box-shadow: 3px 3px 0 var(--ink);
+      }
+      @media (max-width: 520px) {
+        .dl {
+          grid-template-columns: 88px 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="grid venues" id="grid"></div>
+    </div>
+    <div id="ovwrap"></div>
+
+    <script>
+      const venue = (
+        cluster,
+        subcategory,
+        name,
+        capacity,
+        facilities = [],
+        image = "",
+        remarks = "",
+      ) => ({
+        cluster,
+        subcategory,
+        name,
+        capacity,
+        facilities,
+        image,
+        remarks,
+      });
+      const venuesData = [
+        venue(
+          "Yusof Ishak House",
+          "Multipurpose Rooms",
+          "YIH Ascent",
+          20,
+          [],
+          "",
+          "Hours: 8am - 10pm daily | Platform: REBOKS / Email | Cancel: Not stated | Book via REBOKS group rep account (approvals take up to 5 working days). For ad hoc bookings without REBOKS, email yihvenues@nus.edu.sg.",
+        ),
+        venue(
+          "Yusof Ishak House",
+          "Multipurpose Rooms",
+          "YIH Beacon",
+          16,
+          [],
+          "",
+          "Hours: 8am - 10pm daily | Platform: REBOKS / Email | Cancel: Not stated | Book via REBOKS group rep account (approvals take up to 5 working days). For ad hoc bookings without REBOKS, email yihvenues@nus.edu.sg.",
+        ),
+        venue(
+          "Yusof Ishak House",
+          "Music Studios",
+          "YIH Harmony Studio",
+          20,
+          [],
+          "",
+          "Hours: 8am - 10pm daily | Platform: REBOKS / Email | Cancel: Not stated | Air-conditioned, soundproofed with audio system. Book via REBOKS or email yihvenues@nus.edu.sg.",
+        ),
+        venue(
+          "Central Library",
+          "Exhibition Spaces",
+          "Central Library L1 & L4",
+          0,
+          [],
+          "",
+          "Hours: Library Hours | Platform: LibCal (nus.libcal.com) | Cancel: Not stated | Bookings must be made at least 2 weeks in advance (max 2 months prior).",
+        ),
+        venue(
+          "University Town",
+          "Music Studios",
+          "UTown Practice Room M1-M5",
+          5,
+          [],
+          "",
+          "Hours: 7am - 10pm | Platform: UTown FBS (utownfbs.nus.edu.sg) | Cancel: Not stated | Small music practice rooms. Max 2 hours/day and 3 times/week.",
+        ),
+        venue(
+          "University Town",
+          "Dance Studios",
+          "UTown Dance Studio",
+          70,
+          [],
+          "",
+          "Hours: 7am - 10pm | Platform: UTown FBS / Email | Cancel: Not stated | Book via UTown FBS or submit form with staff advisor endorsement to utown@nus.edu.sg.",
+        ),
+        venue(
+          "University Cultural Centre",
+          "Performance Spaces",
+          "UCC Theatre",
+          425,
+          [],
+          "",
+          "Hours: Contact UCC | Platform: Qualtrics / Email | Cancel: Not stated | Includes stage, AV, lighting, and tiered seating. Email uccvenues@nus.edu.sg.",
+        ),
+      ];
+      const clusters = [
+        ...new Set(venuesData.map((v) => v.cluster || "Other Venues")),
+      ];
+      const G = [
+          "#4fc3ff,#6fe3c1",
+          "#ff5fa2,#ffe14d",
+          "#6fe3c1,#4fc3ff",
+          "#ffe14d,#ff5fa2",
+        ],
+        EM = ["🎵", "🎨", "🏛️"];
+      const $ = (id) => document.getElementById(id),
+        esc = (s) =>
+          String(s).replace(
+            /[&<>"]/g,
+            (c) =>
+              ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+          );
+      const st = { v: null, p: null };
+      const grad = (i) =>
+        `linear-gradient(135deg,${G[i % G.length].split(",")[0]},${G[i % G.length].split(",")[1]})`;
+      const img = (src, fb) => (src ? `<img src="${esc(src)}" alt="">` : fb);
+      /* column counts mirror the CSS breakpoints */
+      const vc = () => (innerWidth <= 520 ? 1 : innerWidth <= 820 ? 2 : 3),
+        pc = () => (innerWidth <= 520 ? 2 : innerWidth <= 820 ? 3 : 4);
+
+      /* items -> html with a panel inserted after the end of the selected item's row */
+      function layout(items, n, sel, panelFn) {
+        const rowEnd =
+          sel < 0
+            ? -1
+            : Math.min(items.length - 1, (Math.floor(sel / n) + 1) * n - 1);
+        return items
+          .map((h, k) => h + (k === rowEnd ? panelFn(sel % n, n) : ""))
+          .join("");
+      }
+      function parseRemarks(remarks = "") {
+        const result = { hours: "", platform: "", cancel: "", notes: "" };
+        const parts = String(remarks)
+          .split("|")
+          .map((part) => part.trim())
+          .filter(Boolean);
+        parts.forEach((part) => {
+          if (part.startsWith("Hours:")) {
+            result.hours = part.replace(/^Hours:\s*/i, "");
+          } else if (part.startsWith("Platform:")) {
+            result.platform = part.replace(/^Platform:\s*/i, "");
+          } else if (part.startsWith("Cancel:")) {
+            result.cancel = part.replace(/^Cancel:\s*/i, "");
+          } else {
+            result.notes += (result.notes ? " | " : "") + part;
+          }
+        });
+        return result;
+      }
+      function placeBox(v) {
+        const info = parseRemarks(v.remarks);
+        return `<div class="overlay" id="ov" data-close="p"><section class="panel sub" id="pbox" aria-label="${esc(v.name)} details">
+ <button class="close" data-close="p" aria-label="Close">✕</button>
+ <div class="ph"><h3 class="t">${esc(v.name)}</h3><small>${esc(v.cluster)}</small></div>
+ <div class="pshot">${v.image ? `<img src="${esc(v.image)}" alt="${esc(v.name)}">` : "📷"}</div>
+ <dl class="dl">
+  <dt>Capacity</dt><dd>${v.capacity ? `${v.capacity} people` : "Not stated"}</dd>
+  <dt>Hours</dt><dd>${esc(info.hours || "Not stated")}</dd>
+  <dt>Platform</dt><dd>${esc(info.platform || "Not stated")}</dd>
+  <dt>Cancel</dt><dd>${esc(info.cancel || "Not stated")}</dd>
+  <dt>Notes</dt><dd>${esc(info.notes || "No additional notes.")}</dd>
+ </dl></section></div>`;
+      }
+      function venueBox(col, n) {
+        const selected = clusters[st.v];
+        const entries = venuesData.filter((v) => v.cluster === selected);
+        const groups = [];
+
+        entries.forEach((p) => {
+          const sub = p.subcategory || "Spaces";
+          let group = groups.find((g) => g.name === sub);
+          if (!group) {
+            group = { name: sub, venues: [] };
+            groups.push(group);
+          }
+          group.venues.push(p);
+        });
+
+        let idx = 0;
+        const ph = groups
+          .map((group) => {
+            const items = group.venues
+              .map((v) => {
+                const i = idx++;
+                return `<button class="place" data-p="${i}" aria-expanded="${i === st.p}" aria-controls="pbox"><b>${esc(v.name)}</b></button>`;
+              })
+              .join("");
+
+            return `<div class="grp"><h4>${esc(group.name)}</h4><div class="grid places">${items}</div></div>`;
+          })
+          .join("");
+
+        return `<section class="panel" id="vbox" style="--col:${col};--cols:${n}" aria-label="${esc(selected)} places">
+ <button class="close" data-close="v" aria-label="Close">✕</button>
+ <div class="tabs" role="group" aria-label="Switch venue"><span class="lbl">Venue:</span>${clusters.map((x, i) => `<button class="tab" data-i="${i}" aria-current="${i === st.v}">${esc(x)}</button>`).join("")}</div>
+ <div class="vinfo"><h3 class="t">${esc(selected)}</h3><p>${entries.length} venues</p></div>
+ ${ph}</section>`;
+      }
+      function render() {
+        const n = vc();
+        const cards = clusters.map((clusterName, i) => {
+          const entries = venuesData.filter((v) => v.cluster === clusterName);
+          return `<button class="card" data-i="${i}" aria-expanded="${i === st.v}" aria-controls="vbox"><div class="cover" style="--g:${grad(i)}">${img(entries[0]?.image || "", EM[i % 3])}</div><h2>${esc(clusterName)}</h2><small>${entries.length} venues</small></button>`;
+        });
+        $("grid").innerHTML = layout(cards, n, st.v ?? -1, (c, m) =>
+          venueBox(c, m),
+        );
+        const currentCluster = st.v !== null ? clusters[st.v] : null;
+        $("ovwrap").innerHTML =
+          st.v !== null && st.p !== null && currentCluster
+            ? placeBox(
+                venuesData.filter((v) => v.cluster === currentCluster)[st.p],
+              )
+            : "";
+      }
+      $("grid").onclick = (e) => {
+        const c = e.target.closest(".card,.tab"),
+          p = e.target.closest(".place"),
+          x = e.target.closest("[data-close]");
+        if (x) {
+          if (x.dataset.close === "p") st.p = null;
+          else {
+            st.v = null;
+            st.p = null;
+          }
+        } else if (p) {
+          const k = +p.dataset.p;
+          st.p = st.p === k ? null : k;
+        } else if (c) {
+          const i = +c.dataset.i;
+          st.v = st.v === i && !c.classList.contains("tab") ? null : i;
+          st.p = null;
+        } else return;
+        render();
+        if (st.p === null && st.v !== null)
+          $("vbox")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      };
+      $("ovwrap").onclick = (e) => {
+        if (e.target.id === "ov" || e.target.closest("[data-close]")) {
+          st.p = null;
+          render();
+        }
+      };
+      document.onkeydown = (e) => {
+        if (e.key === "Escape") {
+          if (st.p !== null) st.p = null;
+          else st.v = null;
+          render();
+        }
+      };
+      let last = vc() + "-" + pc();
+      addEventListener("resize", () => {
+        const k = vc() + "-" + pc();
+        if (k !== last) {
+          last = k;
+          render();
+        }
+      });
+      render();
+    </script>
+  </body>
+</html>
