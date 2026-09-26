@@ -1,7 +1,7 @@
 # Pipeline Configuration Variables
 VENUE_CSV    ?= venues.csv
-HTML_TEMPLATE ?= venue.html
-OUT_HTML     ?= venue.html
+HTML_TEMPLATE ?= venues.html
+OUT_HTML     ?= venues.html
 
 .PHONY: all events venues
 
