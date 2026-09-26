@@ -36,18 +36,11 @@
         color: var(--ink);
         font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
         font-weight: 500;
-        background-image:
-          radial-gradient(rgba(79, 195, 255, 0.28) 22%, transparent 24%),
-          radial-gradient(rgba(255, 95, 162, 0.2) 22%, transparent 24%);
-        background-size: 24px 24px;
-        background-position:
-          0 0,
-          12px 12px;
       }
       .wrap {
         max-width: 1040px;
         margin: 0 auto;
-        padding: 20px 16px 60px;
+        padding: 20px 50px 60px;
       }
       .logo {
         font-family: "Dela Gothic One", sans-serif;
@@ -574,8 +567,6 @@
 
         return `<section class="panel" id="vbox" style="--col:${col};--cols:${n}" aria-label="${esc(selected)} places">
  <button class="close" data-close="v" aria-label="Close">✕</button>
- <div class="tabs" role="group" aria-label="Switch venue"><span class="lbl">Venue:</span>${clusters.map((x, i) => `<button class="tab" data-i="${i}" aria-current="${i === st.v}">${esc(x)}</button>`).join("")}</div>
- <div class="vinfo"><h3 class="t">${esc(selected)}</h3><p>${entries.length} venues</p></div>
  ${ph}</section>`;
       }
       function render() {
