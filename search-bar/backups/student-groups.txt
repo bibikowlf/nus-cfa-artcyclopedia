@@ -7,33 +7,8 @@ BreakiNUS, NUS Ballroom, NUS Chinese Dance, NUS d'Hoppers, NUS Dance Blast!, NUS
 NUS Dance Synergy, NUS Funkstyles, NUS Ilsa Tari, NUS Indian Dance, NUS Jazzttitude, NUS Lion Dance,
 Viva LatiNUS, NUS Chinese Drama, NUS STAGE, NUS Arts Production Crew, nuSTUDIOS Film Productions, Third space.
 
-Acacia College: Anova (Street Dance), Babushkraft (Craft), Aftertones (Music).
-
-College of Alice & Peter Tan (CAPT): CAPT Clubs & Societies, CAPTure (Photography), CAPTinSYNC (Music),
-CAPT Tunes, HanDIYcraft, Guitarpella, Chapter (Literary), CAPTivate (Dance).
-
-PGPR: Band, Craft and culture.
-
-Tembusu College: tArt (Visual Arts), tCrews (Dance), SlaTe (Theatre), Tembolly (Music), Tempo (Music),
-Rolling Tones (Music), Yarn & Doodles (Craft).
-
-Temasek Hall: Temasek Hall Dance Club (THDC), THRESHOLD (Theatre), THEATRETTE (Theatre),
-Temasek Hall's Dance Production (THDP), VOX (Music).
-
-King Edward VII (KE7) Hall: KEVII Band, KEVII Choir, KE7 Dance, acaKE, KE Ensemble,
-King Edward VII Hall Chinese Drama Club, KE VII HallPlay.
-
-Raffles Hall: Raffles Hall Culture Committee, RH Dance, RHebels, Raffles Hall Unplugged, RH Voices,
-RHythm, RHMP, RHockerfellas, Raffles Hall Musical Production.
-
-Eusoff Hall: Culture Management Committee, Eusoff Hall Drama-Dance Production (EHDP), Chorapella,
-Eusoff Band, Eusoff Drama, Eusoff Dance Crew.
-
-Kent Ridge Hall: Kent Ridge Hall Video Production Team, KRaphics (Visual Arts), Photo Committee,
-Kent Ridge Hall Dance, KR Rockers, KR Inspire, KRemix, Kent Ridge Acappella, KR Choir.
-
-Sheares Hall: Sheares Hall Cultural Management Board, Chorale, DanSHers, EnSHemble, Geyao,
-SHaccapella, Sheares Band, Sheares Beats, Sheares Production, Sheares Media.
+NUSSU Groups:
+NUSSU The Ridge Magazine.
 
 NUS Interest Groups & Cultural Societies:
 NUS Origami Club, NUS Comedy Club, NUS Arttero, NUS Makeup and Design, NUS Literacy Society,
@@ -46,4 +21,4 @@ NUS Chinese Society, Tamil Language Society, NUS Malay Language Society (PBMUKS)
 NUS Indian Cultural Society, NAACH, NUS Korean Cultural Interest Group, KCIG Cultural Session (KCS),
 KCIG Dance Team (KDT), KCIG Vocal Team (KVT).
 
-Categories: Music, Dance, Theatre, Film & Production, Visual Arts, Photography, Craft, Cultural, Literary, General.
+Categories: Music, Dance, Theatre, Film & Production, Visual Arts, Photography, Craft, Cultural, Literary, Other.
