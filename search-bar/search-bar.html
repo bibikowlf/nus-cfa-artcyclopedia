@@ -22,6 +22,7 @@
       #floating-site-search .item:hover{background:#f1f5f9}
       #floating-site-search .item-title{font-weight:600;color:#0f172a}
       #floating-site-search .item-text{margin-top:3px;font-size:13px;line-height:1.45;color:#475569}
+      #floating-site-search mark{padding:0 2px;border-radius:3px;background:#fde68a;color:#422006}
       #floating-site-search .empty{padding:24px 14px;text-align:center;color:#64748b}
       @media(max-width:600px){#floating-site-search{top:10px;right:10px;left:10px;width:auto}}
     `;
@@ -41,6 +42,24 @@
       .then(function (data) { pages = Array.isArray(data) ? data : []; })
       .catch(function () { pages = []; });
 
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, function (character) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+        });
+      }
+
+      function highlightMatches(value, query) {
+        var text = String(value || '');
+        var matcher = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+        var highlighted = '';
+        var lastIndex = 0;
+        text.replace(matcher, function (match, offset) {
+          highlighted += escapeHtml(text.slice(lastIndex, offset)) + '<mark>' + escapeHtml(match) + '</mark>';
+          lastIndex = offset + match.length;
+        });
+        return highlighted + escapeHtml(text.slice(lastIndex));
+      }
+
     function showResults() {
       var query = input.value.trim().toLowerCase();
       menu.innerHTML = '';
@@ -54,7 +73,7 @@
       matches.forEach(function (page) {
         var item = document.createElement('div');
         item.className = 'item';
-        item.innerHTML = '<div class="item-title">📄 ' + String(page.title || '') + '</div><div class="item-text">' + String(page.content || '').slice(0,120) + '</div>';
+        item.innerHTML = '<div class="item-title">📄 ' + highlightMatches(page.title, query) + '</div><div class="item-text">' + highlightMatches(String(page.content || '').slice(0,120), query) + '</div>';
         item.onclick = function () {
           var url = String(page.url || '');
           if (url.startsWith('/')) url = window.location.origin + url;
