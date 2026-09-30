@@ -8,7 +8,8 @@ const urls = [
   'https://nus-cac.com/publicity-resources',
   'https://nus-cac.com/student-groups',
   'https://nus-cac.com/equipment-loaning',
-  'https://nus-cac.com/about'
+  'https://nus-cac.com/about',
+  'https://nus-cac.com/production-guide'
 ];
 
 // Map absolute URLs to their corresponding flat text file names
