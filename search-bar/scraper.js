@@ -16,7 +16,8 @@ const urls = [
 const backupMapping = {
   'https://nus-cac.com/venue': 'venue.txt',
   'https://nus-cac.com/student-groups': 'student-groups.txt',
-  'https://nus-cac.com/about': 'about.txt'
+  'https://nus-cac.com/about': 'about.txt',
+  'https://nus-cac.com/production-guide': 'production-guide.txt'
 };
 
 function loadLocalBackup(filename) {
