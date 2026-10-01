@@ -73,23 +73,7 @@ def build_js_block(rows, var_name):
         platform = row.get("booking") or ""
         hours = row.get("hours") or ""
         cancel_period = row.get("cancellation period") or ""
-        instructions = row.get("notes") or ""
-        
-        # Build composite remarks
-        raw_remarks = row.get("remarks", "")
-        if not raw_remarks and (platform or hours or instructions):
-            remark_parts = []
-            if hours:
-                remark_parts.append(f"Hours: {hours}")
-            if platform:
-                remark_parts.append(f"Platform: {platform}")
-            if cancel_period:
-                remark_parts.append(f"Cancel: {cancel_period}")
-            if instructions:
-                remark_parts.append(instructions)
-            remarks = " | ".join(remark_parts)
-        else:
-            remarks = raw_remarks
+        notes = row.get("notes") or row.get("remarks") or ""
 
         # Process image path
         raw_image = row.get("image") or ""
@@ -102,7 +86,10 @@ def build_js_block(rows, var_name):
             f'name: {js_string_literal(venue_name)}, '
             f'capacity: {capacity}, '
             f'image: {js_string_literal(image_path)}, '
-            f'remarks: {js_string_literal(remarks)} '
+            f'hours: {js_string_literal(hours)}, '
+            f'platform: {js_string_literal(platform)}, '
+            f'cancel: {js_string_literal(cancel_period)}, '
+            f'notes: {js_string_literal(notes)} '
             f'}}'
         )
         comma = "," if i < len(rows) - 1 else ""
