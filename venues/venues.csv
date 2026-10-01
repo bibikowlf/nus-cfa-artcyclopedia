@@ -1,4 +1,4 @@
-Cluster,Subcategory,Venue Name,Capacity,Bookable / Operating Hours,Cancellation Period,Booking Platform / Route,Booking Instructions & Notes
+Cluster,Subcategory,name,Capacity,hours,Cancellation Period,booking,notes
 University Hall,Open Spaces,UHall Corridor (Section 1 & 2),20 pax (10 pax/section),6pm - 10pm,2 weeks,FBS / Email,Weekdays: Book via FBS (requires FBS rep). Weekends: Email admincfa@nus.edu.sg. No loitering after 10pm; inform security to turn lights off.
 Central Library / YIH,Open Spaces,Chinese Library Corridor (Section 1 & 2),20 pax (10 pax/section),6pm - 10pm,Not stated,Email,Email Han Ming Guang (hanmingguang@nus.edu.sg); CC group manager & liyana.a@nus.edu.sg. Open to all student groups.
 School of Computing,Foyers & Open Spaces,Com 3 Foyer,89 pax,10am - 10pm,Not stated,SoC RT Portal / DocHub,"Check availability via FBS (COM1-B1-PATIO). Submit RT request via rt.comp.nus.edu.sg (Booking - Venue/Room), submit FORM_B via dochub.comp.nus.edu.sg, and secure OSA endorsement 2 weeks in advance."

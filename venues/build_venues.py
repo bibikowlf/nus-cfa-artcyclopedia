@@ -60,10 +60,10 @@ def build_js_block(rows, var_name):
     lines = [f"    const {var_name} = ["]
     for i, row in enumerate(rows):
         cluster = row.get("cluster", "")
-        subcategory = row.get("subcategory") or row.get("sub-category") or row.get("sub category") or ""
+        subcategory = row.get("subcategory") or ""
         
         # Handle header variations for venue name
-        venue_name = row.get("name") or row.get("venue name") or row.get("venue_name") or ""
+        venue_name = row.get("name") or ""
         
         # Parse capacity flexibly
         raw_cap = row.get("capacity", "")
@@ -78,10 +78,10 @@ def build_js_block(rows, var_name):
             facilities_list = []
         
         # Extract additional fields
-        platform = row.get("booking platform / route") or row.get("booking platform") or ""
-        hours = row.get("bookable / operating hours") or row.get("bookable hours") or ""
+        platform = row.get("booking") or ""
+        hours = row.get("hours") or ""
         cancel_period = row.get("cancellation period") or ""
-        instructions = row.get("booking instructions & notes") or row.get("notes") or ""
+        instructions = row.get("notes") or ""
         
         # Build composite remarks
         raw_remarks = row.get("remarks", "")
@@ -100,7 +100,7 @@ def build_js_block(rows, var_name):
             remarks = raw_remarks
 
         # Process image path
-        raw_image = row.get("image") or row.get("photo") or row.get("image_path") or ""
+        raw_image = row.get("image") or ""
         image_path = format_image_path(raw_image)
 
         facilities_js_array = json.dumps(facilities_list, ensure_ascii=False)
