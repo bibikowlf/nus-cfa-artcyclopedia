@@ -70,9 +70,8 @@ def build_js_block(rows, var_name):
         capacity = parse_capacity(raw_cap)
         
         # Extract additional fields
-        platform = row.get("booking") or ""
+        booking = row.get("booking") or ""
         hours = row.get("hours") or ""
-        cancel_period = row.get("cancellation period") or ""
         notes = row.get("notes") or row.get("remarks") or ""
 
         # Process image path
@@ -80,15 +79,14 @@ def build_js_block(rows, var_name):
         image_path = format_image_path(raw_image)
 
         item_str = (
-            f'      {{ '
+            f'{{ '
             f'cluster: {js_string_literal(cluster)}, '
             f'subcategory: {js_string_literal(subcategory)}, '
             f'name: {js_string_literal(venue_name)}, '
             f'capacity: {capacity}, '
             f'image: {js_string_literal(image_path)}, '
             f'hours: {js_string_literal(hours)}, '
-            f'platform: {js_string_literal(platform)}, '
-            f'cancel: {js_string_literal(cancel_period)}, '
+            f'booking: {js_string_literal(booking)}, '
             f'notes: {js_string_literal(notes)} '
             f'}}'
         )
