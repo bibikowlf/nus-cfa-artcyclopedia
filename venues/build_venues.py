@@ -68,14 +68,6 @@ def build_js_block(rows, var_name):
         # Parse capacity flexibly
         raw_cap = row.get("capacity", "")
         capacity = parse_capacity(raw_cap)
-
-        # Parse facilities array
-        raw_fac = row.get("facilities", "")
-        if raw_fac:
-            delimiter = ";;" if ";;" in raw_fac else ";"
-            facilities_list = [f.strip() for f in raw_fac.split(delimiter) if f.strip()]
-        else:
-            facilities_list = []
         
         # Extract additional fields
         platform = row.get("booking") or ""
@@ -103,15 +95,12 @@ def build_js_block(rows, var_name):
         raw_image = row.get("image") or ""
         image_path = format_image_path(raw_image)
 
-        facilities_js_array = json.dumps(facilities_list, ensure_ascii=False)
-
         item_str = (
             f'      {{ '
             f'cluster: {js_string_literal(cluster)}, '
             f'subcategory: {js_string_literal(subcategory)}, '
             f'name: {js_string_literal(venue_name)}, '
             f'capacity: {capacity}, '
-            f'facilities: {facilities_js_array}, '
             f'image: {js_string_literal(image_path)}, '
             f'remarks: {js_string_literal(remarks)} '
             f'}}'
