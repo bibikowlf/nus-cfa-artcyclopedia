@@ -287,6 +287,51 @@
         margin: 0;
         font-weight: 700;
       }
+      .vnote {
+        background: #fff8d6;
+        border: 2px solid var(--ink);
+        border-radius: 14px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        overflow: hidden;
+      }
+      .vnote summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .vnote summary::-webkit-details-marker {
+        display: none;
+      }
+      .vnote summary .ic {
+        font-size: 18px;
+      }
+      .vnote summary .car {
+        margin-left: auto;
+        transition: transform 0.2s;
+      }
+      .vnote[open] summary .car {
+        transform: rotate(180deg);
+      }
+      .vnote .body {
+        padding: 0 14px 14px;
+        display: grid;
+        gap: 10px;
+      }
+      .vnote .body p {
+        margin: 0;
+        line-height: 1.5;
+      }
+      .vnote .body a {
+        color: var(--ink);
+        font-weight: 700;
+        text-decoration-color: var(--pink);
+        text-decoration-thickness: 2px;
+      }
       .grp {
         margin-bottom: 16px;
       }
@@ -439,7 +484,7 @@
     <div id="ovwrap"></div>
 
     <script>
-              const venuesData = [
+                      const venuesData = [
 { cluster: "University Hall", subcategory: "Open Spaces", name: "UHall Corridor (Section 1 & 2)", capacity: 20, image: "", hours: "6pm - 10pm", booking: "FBS / Email", notes: "Weekdays: Book via FBS (requires FBS rep). Weekends: Email admincfa@nus.edu.sg. No loitering after 10pm; inform security to turn lights off." },
 { cluster: "Central Library / YIH", subcategory: "Open Spaces", name: "Chinese Library Corridor (Section 1 & 2)", capacity: 20, image: "", hours: "6pm - 10pm", booking: "Email", notes: "Email Han Ming Guang (hanmingguang@nus.edu.sg); CC group manager & liyana.a@nus.edu.sg. Open to all student groups." },
 { cluster: "School of Computing", subcategory: "Foyers & Open Spaces", name: "Com 3 Foyer", capacity: 89, image: "", hours: "10am - 10pm", booking: "SoC RT Portal / DocHub", notes: "Check availability via FBS (COM1-B1-PATIO). Submit RT request via rt.comp.nus.edu.sg (Booking - Venue/Room), submit FORM_B via dochub.comp.nus.edu.sg, and secure OSA endorsement 2 weeks in advance." },
@@ -473,6 +518,20 @@
 { cluster: "Yale-NUS College", subcategory: "Performance Spaces", name: "Yale-NUS College Hall", capacity: 339, image: "", hours: "Contact YNC", booking: "Email", notes: "Contact Yale-NUS College administration directly." },
 { cluster: "Education Resource Centre", subcategory: "Performance Spaces", name: "Ngee Ann Kongsi Auditorium", capacity: 200, image: "", hours: "Contact UTown", booking: "Email (utown@nus.edu.sg)", notes: "Submit booking request via UTown administration." },
 { cluster: "Central Library", subcategory: "Exhibition Spaces", name: "Central Library L1 & L4", capacity: 0, image: "", hours: "Library Hours", booking: "LibCal (nus.libcal.com)", notes: "Bookings must be made at least 2 weeks in advance (max 2 months prior)." }
+    ];
+              const clustersData = [
+{ cluster: "University Hall", notes: "notes for university hall" },
+{ cluster: "Central Library / YIH", notes: "notes for clb / yih" },
+{ cluster: "School of Computing", notes: "notes for soc" },
+{ cluster: "NUS Libraries", notes: "notes for nus libraries" },
+{ cluster: "Yusof Ishak House", notes: "notes for yih" },
+{ cluster: "University Town", notes: "notes for utown" },
+{ cluster: "University Cultural Centre", notes: "notes for ucc" },
+{ cluster: "Shaw Foundation Alumni House", notes: "notes for shaw foundation" },
+{ cluster: "Yong Siew Toh Conservatory", notes: "notes for yst" },
+{ cluster: "Yale-NUS College", notes: "notes for yale-nus college" },
+{ cluster: "Education Resource Centre", notes: "notes for education resource centre" },
+{ cluster: "Central Library", notes: "notes for clb" }
     ];
       const clusters = [
         ...new Set(venuesData.map((v) => v.cluster || "Other Venues")),
@@ -553,6 +612,7 @@
       function venueBox(col, n) {
         const selected = clusters[st.v];
         const entries = venuesData.filter((v) => v.cluster === selected);
+        const clusterNotes = clustersData.find((item) => item.cluster === selected);
         const groups = [];
 
         entries.forEach((p) => {
@@ -581,6 +641,8 @@
 
         return `<section class="panel" id="vbox" style="--col:${col};--cols:${n}" aria-label="${esc(selected)} places">
  <button class="close" data-close="v" aria-label="Close">✕</button>
+       <div class="vinfo"><h3 class="t">${esc(selected)}</h3></div>
+       ${clusterNotes ? `<details class="vnote"><summary><span class="ic">ℹ️</span><span>General Notes</span><span class="car">▾</span></summary><div class="body"><p>${esc(clusterNotes.notes)}</p></div></details>` : ""}
  ${ph}</section>`;
       }
       function render() {

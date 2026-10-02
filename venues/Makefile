@@ -1,5 +1,6 @@
 # Pipeline Configuration Variables
 VENUE_CSV    ?= venues.csv
+CLUSTER_CSV  ?= clusters.csv
 HTML_TEMPLATE ?= venues.html
 OUT_HTML     ?= venues.html
 
@@ -9,4 +10,4 @@ OUT_HTML     ?= venues.html
 all: venues
 
 venues:
-	python3 build_venues.py $(VENUE_CSV) $(HTML_TEMPLATE) $(OUT_HTML) --var venuesData
+	python3 build_venues.py $(VENUE_CSV) $(HTML_TEMPLATE) $(OUT_HTML) --var venuesData --clusters-csv $(CLUSTER_CSV)

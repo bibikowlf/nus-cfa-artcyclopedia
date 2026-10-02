@@ -96,6 +96,21 @@ def build_js_block(rows, var_name):
     return "\n".join(lines)
 
 
+def build_clusters_js_block(rows):
+    lines = ["    const clustersData = ["]
+    for i, row in enumerate(rows):
+        item_str = (
+            f'{{ '
+            f'cluster: {js_string_literal(row.get("cluster", ""))}, '
+            f'notes: {js_string_literal(row.get("notes", ""))} '
+            f'}}'
+        )
+        comma = "," if i < len(rows) - 1 else ""
+        lines.append(item_str + comma)
+    lines.append("    ];")
+    return "\n".join(lines)
+
+
 def inject_into_html(html_text, js_block, var_name):
     pattern = re.compile(
         r"const\s+" + re.escape(var_name) + r"\s*=\s*\[.*?\]\s*;",
@@ -124,25 +139,38 @@ def main():
     parser.add_argument("template_html", help="Path to source HTML template")
     parser.add_argument("output_html", help="Path to output HTML file")
     parser.add_argument("--var", default="venuesData", help="JS variable name")
+    parser.add_argument("--clusters-csv", help="Path to cluster notes CSV")
     args = parser.parse_args()
 
     try:
-        rows = read_csv_rows(args.input_csv)
+        venue_rows = read_csv_rows(args.input_csv)
     except Exception as e:
-        sys.exit(f"Error reading CSV: {e}")
+        sys.exit(f"Error reading venues CSV: {e}")
 
-    js_block = build_js_block(rows, args.var)
+    clusters_csv = args.clusters_csv or os.path.join(
+        os.path.dirname(args.input_csv), "clusters.csv"
+    )
+    try:
+        cluster_rows = read_csv_rows(clusters_csv)
+    except Exception as e:
+        sys.exit(f"Error reading clusters CSV: {e}")
+
+    venues_js_block = build_js_block(venue_rows, args.var)
+    clusters_js_block = build_clusters_js_block(cluster_rows)
 
     with open(args.template_html, "r", encoding="utf-8") as f:
         html_text = f.read()
 
-    new_html = inject_into_html(html_text, js_block, args.var)
+    new_html = inject_into_html(html_text, venues_js_block, args.var)
+    new_html = inject_into_html(new_html, clusters_js_block, "clustersData")
 
     with open(args.output_html, "w", encoding="utf-8") as f:
         f.write(new_html)
 
-    print(f"✅ Successfully compiled {len(rows)} venues from '{args.input_csv}' into '{args.output_html}' "
-          f"(variable: {args.var}).")
+    print(
+        f"Successfully compiled {len(venue_rows)} venues and "
+        f"{len(cluster_rows)} clusters into '{args.output_html}'."
+    )
 
 
 if __name__ == "__main__":
