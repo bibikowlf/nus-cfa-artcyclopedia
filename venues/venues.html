@@ -372,6 +372,12 @@
       .dl dd {
         font-size: 15px;
       }
+      .dl dd a {
+        color: var(--ink);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
       .pshot {
         width: 100%;
         aspect-ratio: 16/9;
@@ -481,10 +487,33 @@
       const $ = (id) => document.getElementById(id),
         esc = (s) =>
           String(s).replace(
-            /[&<>"]/g,
+            /[&<>\"]/g,
             (c) =>
               ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
           );
+      const renderLinkifiedText = (text) => {
+        const value = String(text ?? "");
+        if (!value) return "";
+
+        const urlPattern = /(https?:\/\/[^\s<>"']+)/g;
+        let out = "";
+        let lastIndex = 0;
+
+        for (const match of value.matchAll(urlPattern)) {
+          const rawUrl = match[0];
+          const trimmed = rawUrl.replace(/[.,!?;:]+$/, "");
+          const trailing = rawUrl.slice(trimmed.length);
+          const start = match.index;
+
+          out += esc(value.slice(lastIndex, start));
+          out += `<a href="${esc(trimmed)}" target="_blank" rel="noopener noreferrer">${esc(trimmed)}</a>`;
+          out += esc(trailing);
+          lastIndex = start + rawUrl.length;
+        }
+
+        out += esc(value.slice(lastIndex));
+        return out;
+      };
       const st = { v: null, p: null };
       const grad = (i) =>
         `linear-gradient(135deg,${G[i % G.length].split(",")[0]},${G[i % G.length].split(",")[1]})`;
@@ -511,8 +540,8 @@
  <dl class="dl">
   <dt>Capacity</dt><dd>${v.capacity ? `${v.capacity} people` : "Not stated"}</dd>
   <dt>Hours</dt><dd>${esc(v.hours || "Not stated")}</dd>
-  <dt>Booking</dt><dd>${esc(v.booking || "Not stated")}</dd>
-  <dt>Notes</dt><dd>${esc(v.notes || "No additional notes.")}</dd>
+  <dt>Booking</dt><dd>${renderLinkifiedText(v.booking || "Not stated")}</dd>
+  <dt>Notes</dt><dd>${renderLinkifiedText(v.notes || "No additional notes.")}</dd>
  </dl></section></div>`;
       }
       function venueBox(col, n) {
