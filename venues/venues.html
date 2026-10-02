@@ -495,20 +495,26 @@
         const value = String(text ?? "");
         if (!value) return "";
 
-        const urlPattern = /(https?:\/\/[^\s<>"']+)/g;
+        const tokenPattern = /(https?:\/\/[^\s<>"']+|[A-Z0-9._%+-]+@nus\.edu\.sg)/gi;
         let out = "";
         let lastIndex = 0;
 
-        for (const match of value.matchAll(urlPattern)) {
-          const rawUrl = match[0];
-          const trimmed = rawUrl.replace(/[.,!?;:]+$/, "");
-          const trailing = rawUrl.slice(trimmed.length);
+        for (const match of value.matchAll(tokenPattern)) {
+          const token = match[0];
           const start = match.index;
 
           out += esc(value.slice(lastIndex, start));
-          out += `<a href="${esc(trimmed)}" target="_blank" rel="noopener noreferrer">${esc(trimmed)}</a>`;
-          out += esc(trailing);
-          lastIndex = start + rawUrl.length;
+
+          if (/^https?:\/\//i.test(token)) {
+            const trimmed = token.replace(/[.,!?;:]+$/, "");
+            const trailing = token.slice(trimmed.length);
+            out += `<a href="${esc(trimmed)}" target="_blank" rel="noopener noreferrer">${esc(trimmed)}</a>`;
+            out += esc(trailing);
+          } else {
+            out += `<a href="mailto:${esc(token)}">${esc(token)}</a>`;
+          }
+
+          lastIndex = start + token.length;
         }
 
         out += esc(value.slice(lastIndex));
