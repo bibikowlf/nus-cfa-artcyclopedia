@@ -56,7 +56,7 @@ def read_csv_rows(csv_path: str):
         return normalized_rows
 
 
-def build_js_block(rows, var_name):
+def build_venues_js_block(rows, var_name):
     lines = [f"    const {var_name} = ["]
     for i, row in enumerate(rows):
         cluster = row.get("cluster", "")
@@ -102,7 +102,8 @@ def build_clusters_js_block(rows):
         item_str = (
             f'{{ '
             f'cluster: {js_string_literal(row.get("cluster", ""))}, '
-            f'notes: {js_string_literal(row.get("notes", ""))} '
+            f'notes: {js_string_literal(row.get("notes", ""))}, '
+            f'image: {js_string_literal(format_image_path(row.get("image", "")))} '
             f'}}'
         )
         comma = "," if i < len(rows) - 1 else ""
@@ -155,7 +156,7 @@ def main():
     except Exception as e:
         sys.exit(f"Error reading clusters CSV: {e}")
 
-    venues_js_block = build_js_block(venue_rows, args.var)
+    venues_js_block = build_venues_js_block(venue_rows, args.var)
     clusters_js_block = build_clusters_js_block(cluster_rows)
 
     with open(args.template_html, "r", encoding="utf-8") as f:

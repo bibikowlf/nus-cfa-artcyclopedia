@@ -484,7 +484,7 @@
     <div id="ovwrap"></div>
 
     <script>
-                      const venuesData = [
+                          const venuesData = [
 { cluster: "University Hall", subcategory: "Open Spaces", name: "UHall Corridor (Section 1 & 2)", capacity: 20, image: "", hours: "6pm - 10pm", booking: "FBS / Email", notes: "Weekdays: Book via FBS (requires FBS rep). Weekends: Email admincfa@nus.edu.sg. No loitering after 10pm; inform security to turn lights off." },
 { cluster: "Central Library / YIH", subcategory: "Open Spaces", name: "Chinese Library Corridor (Section 1 & 2)", capacity: 20, image: "", hours: "6pm - 10pm", booking: "Email", notes: "Email Han Ming Guang (hanmingguang@nus.edu.sg); CC group manager & liyana.a@nus.edu.sg. Open to all student groups." },
 { cluster: "School of Computing", subcategory: "Foyers & Open Spaces", name: "Com 3 Foyer", capacity: 89, image: "", hours: "10am - 10pm", booking: "SoC RT Portal / DocHub", notes: "Check availability via FBS (COM1-B1-PATIO). Submit RT request via rt.comp.nus.edu.sg (Booking - Venue/Room), submit FORM_B via dochub.comp.nus.edu.sg, and secure OSA endorsement 2 weeks in advance." },
@@ -519,19 +519,19 @@
 { cluster: "Education Resource Centre", subcategory: "Performance Spaces", name: "Ngee Ann Kongsi Auditorium", capacity: 200, image: "", hours: "Contact UTown", booking: "Email (utown@nus.edu.sg)", notes: "Submit booking request via UTown administration." },
 { cluster: "Central Library", subcategory: "Exhibition Spaces", name: "Central Library L1 & L4", capacity: 0, image: "", hours: "Library Hours", booking: "LibCal (nus.libcal.com)", notes: "Bookings must be made at least 2 weeks in advance (max 2 months prior)." }
     ];
-              const clustersData = [
-{ cluster: "University Hall", notes: "notes for university hall" },
-{ cluster: "Central Library / YIH", notes: "notes for clb / yih" },
-{ cluster: "School of Computing", notes: "notes for soc" },
-{ cluster: "NUS Libraries", notes: "notes for nus libraries" },
-{ cluster: "Yusof Ishak House", notes: "notes for yih" },
-{ cluster: "University Town", notes: "notes for utown" },
-{ cluster: "University Cultural Centre", notes: "notes for ucc" },
-{ cluster: "Shaw Foundation Alumni House", notes: "notes for shaw foundation" },
-{ cluster: "Yong Siew Toh Conservatory", notes: "notes for yst" },
-{ cluster: "Yale-NUS College", notes: "notes for yale-nus college" },
-{ cluster: "Education Resource Centre", notes: "notes for education resource centre" },
-{ cluster: "Central Library", notes: "notes for clb" }
+                  const clustersData = [
+{ cluster: "University Hall", notes: "notes for university hall", image: "" },
+{ cluster: "Central Library / YIH", notes: "notes for clb / yih", image: "" },
+{ cluster: "School of Computing", notes: "notes for soc", image: "" },
+{ cluster: "NUS Libraries", notes: "notes for nus libraries", image: "" },
+{ cluster: "Yusof Ishak House", notes: "notes for yih", image: "" },
+{ cluster: "University Town", notes: "notes for utown", image: "" },
+{ cluster: "University Cultural Centre", notes: "notes for ucc", image: "" },
+{ cluster: "Shaw Foundation Alumni House", notes: "notes for shaw foundation", image: "" },
+{ cluster: "Yong Siew Toh Conservatory", notes: "notes for yst", image: "" },
+{ cluster: "Yale-NUS College", notes: "notes for yale-nus college", image: "" },
+{ cluster: "Education Resource Centre", notes: "notes for education resource centre", image: "" },
+{ cluster: "Central Library", notes: "notes for clb", image: "" }
     ];
       const clusters = [
         ...new Set(venuesData.map((v) => v.cluster || "Other Venues")),
@@ -649,7 +649,10 @@
         const n = vc();
         const cards = clusters.map((clusterName, i) => {
           const entries = venuesData.filter((v) => v.cluster === clusterName);
-          return `<button class="card" data-i="${i}" aria-expanded="${i === st.v}" aria-controls="vbox"><div class="cover" style="--g:${grad(i)}">${img(entries[0]?.image || "", EM[i % 3])}</div><h2>${esc(clusterName)}</h2><small>${entries.length} venues</small></button>`;
+          const clusterImage =
+            clustersData.find((item) => item.cluster === clusterName)?.image ||
+            "";
+          return `<button class="card" data-i="${i}" aria-expanded="${i === st.v}" aria-controls="vbox"><div class="cover" style="--g:${grad(i)}">${img(clusterImage, EM[i % 3])}</div><h2>${esc(clusterName)}</h2><small>${entries.length} venues</small></button>`;
         });
         $("grid").innerHTML = layout(cards, n, st.v ?? -1, (c, m) =>
           venueBox(c, m),
