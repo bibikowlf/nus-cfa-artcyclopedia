@@ -337,7 +337,7 @@
       .vnote .body a {
         color: var(--ink);
         font-weight: 700;
-        text-decoration-color: var(--ink);
+        text-decoration-color: var(--pink);
         text-decoration-thickness: 2px;
         text-underline-offset: 3px;
         overflow-wrap: anywhere;
@@ -430,8 +430,9 @@
       }
       .dl dd a {
         color: var(--ink);
+        font-weight: 700;
         text-decoration: underline;
-        text-decoration-color: var(--ink);
+        text-decoration-color: var(--pink);
         text-decoration-thickness: 2px;
         text-underline-offset: 3px;
       }
@@ -635,26 +636,29 @@
         const value = String(text ?? "");
         if (!value) return "";
 
-        const tokenPattern = /(https?:\/\/[^\s<>"']+|[A-Z0-9._%+-]+@nus\.edu\.sg)/gi;
+        const tokenPattern = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|(https?:\/\/[^\s<>"']+)|([A-Z0-9._%+-]+@nus\.edu\.sg)/gi;
         let out = "";
         let lastIndex = 0;
 
         for (const match of value.matchAll(tokenPattern)) {
-          const token = match[0];
           const start = match.index;
 
           out += esc(value.slice(lastIndex, start));
 
-          if (/^https?:\/\//i.test(token)) {
+          if (match[1] !== undefined) {
+            out += `<a href="${esc(match[2])}" target="_blank" rel="noopener noreferrer">${esc(match[1])}</a>`;
+          } else if (match[3] !== undefined) {
+            const token = match[3];
             const trimmed = token.replace(/[.,!?;:]+$/, "");
             const trailing = token.slice(trimmed.length);
             out += `<a href="${esc(trimmed)}" target="_blank" rel="noopener noreferrer">${esc(trimmed)}</a>`;
             out += esc(trailing);
           } else {
+            const token = match[4];
             out += `<a href="mailto:${esc(token)}">${esc(token)}</a>`;
           }
 
-          lastIndex = start + token.length;
+          lastIndex = start + match[0].length;
         }
 
         out += esc(value.slice(lastIndex));
