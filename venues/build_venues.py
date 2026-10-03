@@ -39,8 +39,8 @@ def format_image_path(raw_img: str) -> str:
     if "/" in raw_img or "\\" in raw_img:
         return raw_img.replace("\\", "/")
     
-    # Prepend relative folder path for clean folder separation
-    return f"../photos/venues/{raw_img}"
+    # Prepend folder path for clean folder separation
+    return f"../photos/venue/{raw_img}"
 
 
 def read_csv_rows(csv_path: str):
