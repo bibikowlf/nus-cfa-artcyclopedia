@@ -56,6 +56,19 @@ def read_csv_rows(csv_path: str):
         return normalized_rows
 
 
+def validate_clusters(venue_rows, cluster_rows):
+    venue_clusters = {row.get("cluster", "") for row in venue_rows}
+    clusters = {row.get("cluster", "") for row in cluster_rows}
+    alerts = []
+
+    for cluster in sorted(venue_clusters - clusters):
+        alerts.append(f"ALERT: Venue cluster '{cluster}' does not appear in clusters.csv.")
+    for cluster in sorted(clusters - venue_clusters):
+        alerts.append(f"ALERT: Cluster '{cluster}' in clusters.csv is not used by any venue.")
+
+    return alerts
+
+
 def build_venues_js_block(rows, var_name):
     lines = [f"    const {var_name} = ["]
     for i, row in enumerate(rows):
@@ -63,7 +76,7 @@ def build_venues_js_block(rows, var_name):
         subcategory = row.get("subcategory") or ""
         
         # Handle header variations for venue name
-        venue_name = row.get("name") or ""
+        venue_name = row.get("venue") or ""
         
         # Parse capacity flexibly
         raw_cap = row.get("capacity", "")
@@ -119,7 +132,7 @@ def inject_into_html(html_text, js_block, var_name):
     )
 
     if pattern.search(html_text):
-        new_html = pattern.sub(js_block, html_text, count=1)
+        new_html = pattern.sub(lambda _: js_block, html_text, count=1)
     else:
         insertion_point = html_text.find("</script>")
         if insertion_point == -1:
@@ -155,6 +168,9 @@ def main():
         cluster_rows = read_csv_rows(clusters_csv)
     except Exception as e:
         sys.exit(f"Error reading clusters CSV: {e}")
+
+    for alert in validate_clusters(venue_rows, cluster_rows):
+        print(alert, file=sys.stderr)
 
     venues_js_block = build_venues_js_block(venue_rows, args.var)
     clusters_js_block = build_clusters_js_block(cluster_rows)
