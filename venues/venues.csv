@@ -1,112 +1,112 @@
-Cluster,Subcategory,Venue,Capacity,Hours,Booking,Notes
-UTown,Amphitheatre / Open Space ,"Area Outside LT52, LT53",50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Courtyard,100,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside Auditorium,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside LTS,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Internal Street Level 2,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Internal Street Level 3,100,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Open Area (Near Auditorium),50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Open Area (Near Seminar Wing),50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Open Area (Near The Study),50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Open Area (Outside SR4 &5),50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Town Green,400,24-Jul,utown@nus.edu.sg,Check guideline on Town Green Usage Policy https://uci.nus.edu.sg/wp-content/uploads/2024/02/Usage-of-Town-Green.pdf.
-UTown,Amphitheatre / Open Space ,Town Plaza Auditorium Foyer,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Town Plaza Informal Study Area,100,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,Town Plaza Outdoor Area (Outside Foodcourt),50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,UT Foyer,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,ERC Open Study Area,50,24-Jul,utown@nus.edu.sg,
-UTown,Amphitheatre / Open Space ,ERC Roof Deck,100,24-Jul,utown@nus.edu.sg,
+Cluster,Subcategory,Venue,Capacity,Hours,Booking,Notes,Image
+UTown,Amphitheatre / Open Space ,"Area Outside LT52, LT53",50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Courtyard,100,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside Auditorium,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside LTS,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Internal Street Level 2,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Internal Street Level 3,100,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Open Area (Near Auditorium),50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Open Area (Near Seminar Wing),50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Open Area (Near The Study),50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Open Area (Outside SR4 &5),50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Town Green,400,24/7,utown@nus.edu.sg,Check guideline on Town Green Usage Policy https://uci.nus.edu.sg/wp-content/uploads/2024/02/Usage-of-Town-Green.pdf.,
+UTown,Amphitheatre / Open Space ,Town Plaza Auditorium Foyer,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Town Plaza Informal Study Area,100,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,Town Plaza Outdoor Area (Outside Foodcourt),50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,UT Foyer,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,ERC Open Study Area,50,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,ERC Roof Deck,100,24/7,utown@nus.edu.sg,,
 UTown,Auditorium,UTown Auditorium 1,448,"Mon-Fri 07:00-22:00
-Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Located at Level 1, Town Plaza. See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description."
+Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Located at Level 1, Town Plaza. See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description.",
 UTown,Auditorium,UTown Auditorium 2,466,"Mon-Fri 07:00-22:00
-Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level 1, Stephen Riady Centre.See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description."
+Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level 1, Stephen Riady Centre.See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description.",
 UTown,Auditorium,UTown Auditorium 3,255,"Mon-Fri 07:00-22:00
-Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level B1, College of Alice & Peter Tan.See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description."
+Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level B1, College of Alice & Peter Tan.See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description.",
 UTown,Auditorium,Ngee Ann Kongsi Auditorium,200,"Mon-Fri 07:00-22:00
-Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level 2, Education Resource Centre. See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description."
-UTown,DA/DS,Dance Atelier 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,The facility is laid with dance mats and users should not wear their shoes into the facility.
-UTown,DA/DS,Function Hall/Dance Atelier 2,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,
-UTown,DA/DS,Dance Studio,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,
-UTown,DA/DS,Practice Room 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,
-UTown,Practice Spaces,Practice Room L1,15,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors
-UTown,Practice Spaces,Practice Room L3,20,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.
-UTown,Practice Spaces,Practice Room M1,3,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.
-UTown,Practice Spaces,Practice Room M2,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with piano.
-UTown,Practice Spaces,Practice Room M3,4,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-UTown,Practice Spaces,Practice Room M4,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with piano.
-UTown,Practice Spaces,Practice Room M5,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.
-UTown,Practice Spaces,Studio M1,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-UTown,Practice Spaces,Studio M2,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-UTown,Practice Spaces,Studio M3,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-UTown,Practice Spaces,Studio M4,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-UTown,Practice Spaces,Studio M5,3,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.
-UTown,Practice Spaces,Studio M6,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,
-Wan Boo Sow Chinese Library,Exhibition Spaces,Chinese Library Corridor (section 1 & 2),10 (per section),Subject to request,hanmingguang@nus.edu.sg,Email hanmingguang@nus.edu.sg and CC your group manager and liyana.a@nus.edu.sg. 
-Central Library,Exhibition Spaces,"Art Buzz, Central Library L1",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53052.
-Central Library,Exhibition Spaces,"Exhibition Space, L1 (near the Main Entrance)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54894.
-Central Library,Exhibition Spaces,"Exhibition Space, L1 (infront of Co-op)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53214.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (in between entrance and staircase 6)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57080.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (infront of staircase 6)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57079.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (inside and on the left of gantries)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54428.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (near entrance)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/55163.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (next to water coolers)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54169.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside DSLab) ",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53663.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside gantries)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53253.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside Seminar Room)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53662.
-Central Library,Exhibition Spaces,"Exhibition Space, L4 (wall next to staircase 7)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53664.
-Central Library,Exhibition Spaces,"Exhibition Space, L5 (under staircase)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57627.
-Central Library,Exhibition Spaces,"Exhibition Space, L6 (WBSCHL)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53130.
-Central Library,Event Spaces,"Multipurpose Room, L4",40,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53050.
-Central Library,Event Spaces,"Collaborative & Active Learning Room (CALR), L1",40,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53051.
-Central Library,Event Spaces,Seminar Room L4,120,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53049.
+Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Loacted at Level 2, Education Resource Centre. See University Town Teaching Facilities Auditoriums & Lecture Halls https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description.",
+UTown,DA/DS,Dance Atelier 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,The facility is laid with dance mats and users should not wear their shoes into the facility.,
+UTown,DA/DS,Function Hall/Dance Atelier 2,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,
+UTown,DA/DS,Dance Studio,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,
+UTown,DA/DS,Practice Room 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,
+UTown,Practice Spaces,Practice Room L1,15,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors,
+UTown,Practice Spaces,Practice Room L3,20,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.,
+UTown,Practice Spaces,Practice Room M1,3,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.,
+UTown,Practice Spaces,Practice Room M2,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with piano.,
+UTown,Practice Spaces,Practice Room M3,4,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+UTown,Practice Spaces,Practice Room M4,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with piano.,
+UTown,Practice Spaces,Practice Room M5,5,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.,
+UTown,Practice Spaces,Studio M1,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+UTown,Practice Spaces,Studio M2,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+UTown,Practice Spaces,Studio M3,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+UTown,Practice Spaces,Studio M4,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+UTown,Practice Spaces,Studio M5,3,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,Equipped with plastic mirrors.,
+UTown,Practice Spaces,Studio M6,2,Mon-Sun 07:00-22:00,Facilities Booking System https://utownfbs.nus.edu.sg/utown/apptop.aspx,,
+Wan Boo Sow Chinese Library,Exhibition Spaces,Chinese Library Corridor (section 1 & 2),10 (per section),Subject to request,hanmingguang@nus.edu.sg,Email hanmingguang@nus.edu.sg and CC your group manager and liyana.a@nus.edu.sg. ,
+Central Library,Exhibition Spaces,"Art Buzz, Central Library L1",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53052.,art-buzz-central-library-l1.jpg
+Central Library,Exhibition Spaces,"Exhibition Space, L1 (near the Main Entrance)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54894.,exhibition-space-l1-main-entrance.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L1 (infront of Co-op)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53214.,exhibition-space-l1-coop.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (in between entrance and staircase 6)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57080.,exhibition-space-l4-entrance-staircase.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (infront of staircase 6)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57079.,exhibition-space-l4-staricase.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (inside and on the left of gantries)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54428.,exhibition-space-l4-left-gantries.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (near entrance)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/55163.,exhibition-space-l4-entrance.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (next to water coolers)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/54169.,exhibition-space-l4-water-coolers.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside DSLab) ",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53663.,exhibition-space-l4-dslab.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside gantries)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53253.,exhibition-space-l4-outside-gantries.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (outside Seminar Room)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53662.,exhibition-space-l4-seminar-room.jpg
+Central Library,Exhibition Spaces,"Exhibition Space, L4 (wall next to staircase 7)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53664.,exhibition-space-l4-wall-staircase.jpeg
+Central Library,Exhibition Spaces,"Exhibition Space, L5 (under staircase)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/57627.,exhibition-space-l5.png
+Central Library,Exhibition Spaces,"Exhibition Space, L6 (WBSCHL)",,Mon-Sat 00:00-24:00,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53130.,exhibition-space-l6.jpeg
+Central Library,Event Spaces,"Multipurpose Room, L4",40,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53050.,multipurpose-room-l4.jpeg
+Central Library,Event Spaces,"Collaborative & Active Learning Room (CALR), L1",40,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53051.,calr-l1.jpeg
+Central Library,Event Spaces,Seminar Room L4,120,Mon-Fri 09:00-20:30,Space Availability - Central Library https://nus.libcal.com/spaces?lid=7406.,Venue details are listed here https://nus.libcal.com/space/53049.,seminar-room-l4-jpeg
 Central Library,Event Spaces,Central Library Forum,,Subject to request,reboks@nus.edu.sg,"For events booking, please contact SUU-REBOKS via reboks@nus.edu.sg with the completed booking form https://utownfbs.nus.edu.sg/utown/BookingForm.doc and staff advisor endorsement for rental rates and booking procedures. Requests should be notified in advance as the booking form has to be submitted at least one month before event setup begins.
-If the space is planned to be modified (such as adding a stage), please obtain clearance from Office of Risk Management and Compliance (ORMC) and get a Temporary Change of Use Permit Application (TPA)."
-C J Koh Law Library,Exhibition Spaces,Law Library Gallery Space (L2),,Mon-Sat 00:00-24:00,Space Availability - C J Koh Law Library https://nus.libcal.com/spaces?lid=7420,Venue details are listed here https://nus.libcal.com/space/54216.
-Medicine+Science Library,Event Spaces,"Collaboration Space 1, L1",30,Mon-Fri 09:00-17:30,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53067.
-Medicine+Science Library,Event Spaces,"Collaboration Space 2-3, L1",77,Mon-Fri 09:00-17:30,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,"Venue details are listed here https://nus.libcal.com/space/53068. When booking, student reps will be prompted with booking form. Please follow the format below to indicate 'CSPAN/CSPAN - xx' in the various fields so that the library staff can identify the booking and approve the booking accordingly. "
-Medicine+Science Library,,"Atrium Space 1, L1",50,24-Jul,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53071.
-Medicine+Science Library,,"Atrium Space 2, L1",50,24-Jul,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53072.
-School of Computing ,Open Spaces,COM 3 Foyer,,Mon-Sun 10:00-22:00,MySoC-apps https://rt.comp.nus.edu.sg/,"1. Check for venue availability at the [ACES Facility Booking System](https://aces.nus.edu.sg/fbs/jsp/safeLandingPage.jsp) before sending in booking requests, by selecting General Facilities.\n2. Submit your booking request via [SoC RT](https://rt.comp.nus.edu.sg/). Select 'Booking (Venue/Room)' under category. Students need to fill up FORM_B, downloadable from [SoC DocHub](https://dochub.comp.nus.edu.sg/buildfac/services/soc_room_reservation) and found in Teams Venues' Sem 2 folder.\n3. The event needs to be endorsed by the Office of Student Affairs (OSA).\n4. Student organisations must book 2 weeks in advance. SoC does not entertain last-minute bookings.\n5. SoC will confirm the booking after checking availability.\n6. Organisers are responsible for participant safety and must ensure SoC property is not damaged or stolen during the event.\n\nBookings are processed by the SoC Department 2 weeks prior to the booking date. Priority still goes to SoC students and events."
-Yusof Ishak House,Multi-Purpose Rooms,Ascent,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Beacon,16,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Elevate,16,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Illuminate,24,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Lumina,48,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Pinnacle,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Quest,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Multi-Purpose Rooms,Wisdom,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Open Spaces,Skylight,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Open Spaces,Social Commons,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Open Spaces,Atrium Stairs,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,
-Yusof Ishak House,Open Spaces,Roof Terrace,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Commons,100,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Crossroad,65,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Assembly,40,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Exchange,10,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Quad,55,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Multipurpose Areas,Yard,16,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Music Studio,Harmony,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Music Studio,Rhythm,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Dance Studio,Flow,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Dance Studio,Motion,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,
-Yusof Ishak House,Dance Studio,StepUp,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,
-University Cultural Centre,Performance Space,Ho Bee Auditorium,1607,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ho-bee-auditorium/,
-University Cultural Centre,Performance Space,Theatre,425,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/theatre/,
+If the space is planned to be modified (such as adding a stage), please obtain clearance from Office of Risk Management and Compliance (ORMC) and get a Temporary Change of Use Permit Application (TPA).",
+C J Koh Law Library,Exhibition Spaces,Law Library Gallery Space (L2),,Mon-Sat 00:00-24:00,Space Availability - C J Koh Law Library https://nus.libcal.com/spaces?lid=7420,Venue details are listed here https://nus.libcal.com/space/54216.,law-library-gallery-space.jpeg
+Medicine+Science Library,Event Spaces,"Collaboration Space 1, L1",30,Mon-Fri 09:00-17:30,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53067.,collaboration-space-1.jpg
+Medicine+Science Library,Event Spaces,"Collaboration Space 2-3, L1",77,Mon-Fri 09:00-17:30,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,"Venue details are listed here https://nus.libcal.com/space/53068. When booking, student reps will be prompted with booking form. Please follow the format below to indicate 'CSPAN/CSPAN - xx' in the various fields so that the library staff can identify the booking and approve the booking accordingly. ",collaboration-space-23.jpg
+Medicine+Science Library,,"Atrium Space 1, L1",50,24-Jul,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53071.,atrium-space-1.jpg
+Medicine+Science Library,,"Atrium Space 2, L1",50,24-Jul,Space Availability - Medicine+Science Library https://nus.libcal.com/spaces?lid=7407.,Venue details are listed here https://nus.libcal.com/space/53072.,atrium-space-2.jpg
+School of Computing ,Open Spaces,COM 3 Foyer,,Mon-Sun 10:00-22:00,MySoC-apps https://rt.comp.nus.edu.sg/,"1. Check for venue availability at the [ACES Facility Booking System](https://aces.nus.edu.sg/fbs/jsp/safeLandingPage.jsp) before sending in booking requests, by selecting General Facilities.\n2. Submit your booking request via [SoC RT](https://rt.comp.nus.edu.sg/). Select 'Booking (Venue/Room)' under category. Students need to fill up FORM_B, downloadable from [SoC DocHub](https://dochub.comp.nus.edu.sg/buildfac/services/soc_room_reservation) and found in Teams Venues' Sem 2 folder.\n3. The event needs to be endorsed by the Office of Student Affairs (OSA).\n4. Student organisations must book 2 weeks in advance. SoC does not entertain last-minute bookings.\n5. SoC will confirm the booking after checking availability.\n6. Organisers are responsible for participant safety and must ensure SoC property is not damaged or stolen during the event.\n\nBookings are processed by the SoC Department 2 weeks prior to the booking date. Priority still goes to SoC students and events.",
+Yusof Ishak House,Multi-Purpose Rooms,Ascent,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Ascent.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Beacon,16,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Elevate_Beacon.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Elevate,16,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Elevate_Beacon.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Illuminate,24,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Illuminate.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Lumina,48,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Lumina.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Pinnacle,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Elevate_Beacon.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Quest,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Elevate_Beacon.jpg
+Yusof Ishak House,Multi-Purpose Rooms,Wisdom,12,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Multipurpose_Room_Elevate_Beacon.jpg
+Yusof Ishak House,Open Spaces,Skylight,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Open_Spaces_Skylight.jpg
+Yusof Ishak House,Open Spaces,Social Commons,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,Open_Spaces_Social_Commons.jpg
+Yusof Ishak House,Open Spaces,Atrium Stairs,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/nus_public_web/public/index.php,,yih-atrium-stairs.webp
+Yusof Ishak House,Open Spaces,Roof Terrace,,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Open_Spaces_Roof_Terrace.jpg
+Yusof Ishak House,Multipurpose Areas,Commons,100,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Area_Commons.jpg
+Yusof Ishak House,Multipurpose Areas,Crossroad,65,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Area_Crossroad.jpg
+Yusof Ishak House,Multipurpose Areas,Assembly,40,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Area_Assembly.jpg
+Yusof Ishak House,Multipurpose Areas,Exchange,10,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Area_Exchange.jpg
+Yusof Ishak House,Multipurpose Areas,Quad,55,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Area_Quad.jpg
+Yusof Ishak House,Multipurpose Areas,Yard,16,Mon-Sun 07:00-23:00,https://reboks.nus.edu.sg/,,Multipurpose_Room_Yard.jpg
+Yusof Ishak House,Music Studio,Harmony,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,,Music_Studio.jpg
+Yusof Ishak House,Music Studio,Rhythm,20,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,,Music_Studio.jpg
+Yusof Ishak House,Dance Studio,Flow,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,,Dance_Studio.jpg
+Yusof Ishak House,Dance Studio,Motion,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,,Dance_Studio.jpg
+Yusof Ishak House,Dance Studio,StepUp,40,Mon-Sun 08:00-22:00,https://reboks.nus.edu.sg/,,Dance_Studio.jpg
+University Cultural Centre,Performance Space,Ho Bee Auditorium,1607,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ho-bee-auditorium/,,
+University Cultural Centre,Performance Space,Theatre,425,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/theatre/,,
 University Cultural Centre,Atrium,Atrium,"120 (banquet setting)
-200 (standing)",Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/atrium/,
-University Cultural Centre,Ancillary Space,Dance Studio,80,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/,Has sprung timber flooring covering an area of 24m x 15m layered with Jumbo dance mats. Equipped with built-in ceiling speakers
-University Cultural Centre,Ancillary Space,Function Room 1 & 2,50,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/,"Equipped with mirrors, soundproofing materials and flooring suitable for rehearsals."
-Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Concert Hall,573,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/ .
-Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Orchestra Hall,150,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here http://ystmusic.nus.edu.sg/facilities-conservatory-orchestra-hall/.
-Yong Siew Toh Conservatory of Music,Performance Space,Steven Baxter Recital Studio,70,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-steven-baxter-recital-studio/.
+200 (standing)",Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/atrium/,,
+University Cultural Centre,Ancillary Space,Dance Studio,80,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/,Has sprung timber flooring covering an area of 24m x 15m layered with Jumbo dance mats. Equipped with built-in ceiling speakers,
+University Cultural Centre,Ancillary Space,Function Room 1 & 2,50,Subject to request,https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/,"Equipped with mirrors, soundproofing materials and flooring suitable for rehearsals.",
+Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Concert Hall,573,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/ .,
+Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Orchestra Hall,150,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here http://ystmusic.nus.edu.sg/facilities-conservatory-orchestra-hall/.,
+Yong Siew Toh Conservatory of Music,Performance Space,Steven Baxter Recital Studio,70,Mon-Sun 09:00-23:00,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-steven-baxter-recital-studio/.,
 Yong Siew Toh Conservatory of Music,Practice Spaces,Ensemble Rooms,35,"Mon-Sun 09:00-23:00 (Commercial)
 Mon-Sun 08:00-23:30 (YST Student)",https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,"Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/ .
-Only Ensemble Rooms 3 to 8 are open for bookings by students."
-Yong Siew Toh Conservatory of Music,Recording Studio,Recording Studio,,Subject to request,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/ .
-Yong Siew Toh Conservatory of Music,Reception,Foyer / Lounge / Balcony,,Subject to request,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-foyer/.
+Only Ensemble Rooms 3 to 8 are open for bookings by students.",
+Yong Siew Toh Conservatory of Music,Recording Studio,Recording Studio,,Subject to request,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/ .,
+Yong Siew Toh Conservatory of Music,Reception,Foyer / Lounge / Balcony,,Subject to request,https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/,Refer to venue details listed here https://www.ystmusic.nus.edu.sg/facilities-conservatory-foyer/.,
 Shaw Foundation Alumni House,Auditorium,Auditorium,298,Mon-Sat 07:30-22:00,https://alum.nus.edu.sg/fbs/enquire.aspx?id=14," Visit the SFAH availability and enquiry page https://alum.nus.edu.sg/fbs/venue.aspx?id=14 to check venue availability. Click 'Submit Enquiry Form' to land on the booking page.
 
-For venue rates, visit the Rates and Discounts page https://uci.nus.edu.sg/campus-life/campus-services/sfah/rates-and-discounts/ and download the Venue Kit (https://uci.nus.edu.sg/wp-content/uploads/2026/04/SFAH-VENUE-KIT-Apr-2026-2.pdf)."
-Yale-NUS College,Performance Space,Yale-NUS College Hall?,339,Subject to request,nuscollege@nus.edu.sg,
+For venue rates, visit the Rates and Discounts page https://uci.nus.edu.sg/campus-life/campus-services/sfah/rates-and-discounts/ and download the Venue Kit (https://uci.nus.edu.sg/wp-content/uploads/2026/04/SFAH-VENUE-KIT-Apr-2026-2.pdf).",
+Yale-NUS College,Performance Space,Yale-NUS College Hall?,339,Subject to request,nuscollege@nus.edu.sg,,
 University Hall,Open Spaces,UHall Corridor (section1 & 2),10 per section ,Mon-Sun 6pm to 10pm,https://aces.nus.edu.sg/fbs/jsp/safeLandingPage.jsp?,"For weekday bookings: FBS booking can only be accessed by FBS reps.
-For weekend bookings: Please go through OSA-CFA by emailing admincfa@nus.edu.sg "
+For weekend bookings: Please go through OSA-CFA by emailing admincfa@nus.edu.sg ",
