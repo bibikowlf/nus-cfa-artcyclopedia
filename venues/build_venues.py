@@ -56,64 +56,67 @@ def read_csv_rows(csv_path: str):
         return normalized_rows
 
 
-def build_js_block(rows, var_name):
+def validate_clusters(venue_rows, cluster_rows):
+    venue_clusters = {row.get("cluster", "") for row in venue_rows}
+    clusters = {row.get("cluster", "") for row in cluster_rows}
+    alerts = []
+
+    for cluster in sorted(venue_clusters - clusters):
+        alerts.append(f"ALERT: Venue cluster '{cluster}' does not appear in clusters.csv.")
+    for cluster in sorted(clusters - venue_clusters):
+        alerts.append(f"ALERT: Cluster '{cluster}' in clusters.csv is not used by any venue.")
+
+    return alerts
+
+
+def build_venues_js_block(rows, var_name):
     lines = [f"    const {var_name} = ["]
     for i, row in enumerate(rows):
         cluster = row.get("cluster", "")
-        subcategory = row.get("subcategory") or row.get("sub-category") or row.get("sub category") or ""
+        subcategory = row.get("subcategory") or ""
         
         # Handle header variations for venue name
-        venue_name = row.get("name") or row.get("venue name") or row.get("venue_name") or ""
+        venue_name = row.get("venue") or ""
         
         # Parse capacity flexibly
         raw_cap = row.get("capacity", "")
         capacity = parse_capacity(raw_cap)
-
-        # Parse facilities array
-        raw_fac = row.get("facilities", "")
-        if raw_fac:
-            delimiter = ";;" if ";;" in raw_fac else ";"
-            facilities_list = [f.strip() for f in raw_fac.split(delimiter) if f.strip()]
-        else:
-            facilities_list = []
         
         # Extract additional fields
-        platform = row.get("booking platform / route") or row.get("booking platform") or ""
-        hours = row.get("bookable / operating hours") or row.get("bookable hours") or ""
-        cancel_period = row.get("cancellation period") or ""
-        instructions = row.get("booking instructions & notes") or row.get("notes") or ""
-        
-        # Build composite remarks
-        raw_remarks = row.get("remarks", "")
-        if not raw_remarks and (platform or hours or instructions):
-            remark_parts = []
-            if hours:
-                remark_parts.append(f"Hours: {hours}")
-            if platform:
-                remark_parts.append(f"Platform: {platform}")
-            if cancel_period:
-                remark_parts.append(f"Cancel: {cancel_period}")
-            if instructions:
-                remark_parts.append(instructions)
-            remarks = " | ".join(remark_parts)
-        else:
-            remarks = raw_remarks
+        booking = row.get("booking") or ""
+        hours = row.get("hours") or ""
+        notes = row.get("notes") or row.get("remarks") or ""
 
         # Process image path
-        raw_image = row.get("image") or row.get("photo") or row.get("image_path") or ""
+        raw_image = row.get("image") or ""
         image_path = format_image_path(raw_image)
 
-        facilities_js_array = json.dumps(facilities_list, ensure_ascii=False)
-
         item_str = (
-            f'      {{ '
+            f'{{ '
             f'cluster: {js_string_literal(cluster)}, '
             f'subcategory: {js_string_literal(subcategory)}, '
             f'name: {js_string_literal(venue_name)}, '
             f'capacity: {capacity}, '
-            f'facilities: {facilities_js_array}, '
             f'image: {js_string_literal(image_path)}, '
-            f'remarks: {js_string_literal(remarks)} '
+            f'hours: {js_string_literal(hours)}, '
+            f'booking: {js_string_literal(booking)}, '
+            f'notes: {js_string_literal(notes)} '
+            f'}}'
+        )
+        comma = "," if i < len(rows) - 1 else ""
+        lines.append(item_str + comma)
+    lines.append("    ];")
+    return "\n".join(lines)
+
+
+def build_clusters_js_block(rows):
+    lines = ["    const clustersData = ["]
+    for i, row in enumerate(rows):
+        item_str = (
+            f'{{ '
+            f'cluster: {js_string_literal(row.get("cluster", ""))}, '
+            f'notes: {js_string_literal(row.get("notes", ""))}, '
+            f'image: {js_string_literal(format_image_path(row.get("image", "")))} '
             f'}}'
         )
         comma = "," if i < len(rows) - 1 else ""
@@ -129,7 +132,7 @@ def inject_into_html(html_text, js_block, var_name):
     )
 
     if pattern.search(html_text):
-        new_html = pattern.sub(js_block, html_text, count=1)
+        new_html = pattern.sub(lambda _: js_block, html_text, count=1)
     else:
         insertion_point = html_text.find("</script>")
         if insertion_point == -1:
@@ -150,25 +153,41 @@ def main():
     parser.add_argument("template_html", help="Path to source HTML template")
     parser.add_argument("output_html", help="Path to output HTML file")
     parser.add_argument("--var", default="venuesData", help="JS variable name")
+    parser.add_argument("--clusters-csv", help="Path to cluster notes CSV")
     args = parser.parse_args()
 
     try:
-        rows = read_csv_rows(args.input_csv)
+        venue_rows = read_csv_rows(args.input_csv)
     except Exception as e:
-        sys.exit(f"Error reading CSV: {e}")
+        sys.exit(f"Error reading venues CSV: {e}")
 
-    js_block = build_js_block(rows, args.var)
+    clusters_csv = args.clusters_csv or os.path.join(
+        os.path.dirname(args.input_csv), "clusters.csv"
+    )
+    try:
+        cluster_rows = read_csv_rows(clusters_csv)
+    except Exception as e:
+        sys.exit(f"Error reading clusters CSV: {e}")
+
+    for alert in validate_clusters(venue_rows, cluster_rows):
+        print(alert, file=sys.stderr)
+
+    venues_js_block = build_venues_js_block(venue_rows, args.var)
+    clusters_js_block = build_clusters_js_block(cluster_rows)
 
     with open(args.template_html, "r", encoding="utf-8") as f:
         html_text = f.read()
 
-    new_html = inject_into_html(html_text, js_block, args.var)
+    new_html = inject_into_html(html_text, venues_js_block, args.var)
+    new_html = inject_into_html(new_html, clusters_js_block, "clustersData")
 
     with open(args.output_html, "w", encoding="utf-8") as f:
         f.write(new_html)
 
-    print(f"✅ Successfully compiled {len(rows)} venues from '{args.input_csv}' into '{args.output_html}' "
-          f"(variable: {args.var}).")
+    print(
+        f"Successfully compiled {len(venue_rows)} venues and "
+        f"{len(cluster_rows)} clusters into '{args.output_html}'."
+    )
 
 
 if __name__ == "__main__":
