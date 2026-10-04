@@ -687,7 +687,7 @@
           .join("");
       }
       function placeBox(v) {
-        return `<div class="overlay" id="ov" data-close="p"><section class="panel sub" id="pbox" aria-label="${esc(v.name)} details">
+        return `<div class="overlay" id="ov"><section class="panel sub" id="pbox" aria-label="${esc(v.name)} details">
  <button class="close" data-close="p" aria-label="Close">✕</button>
  <div class="ph"><h3 class="t">${esc(v.name)}</h3><small>${esc(v.cluster)}</small></div>
  <div class="pshot">${v.image ? `<img src="${esc(v.image)}" alt="${esc(v.name)}">` : "📷"}</div>
@@ -777,7 +777,10 @@
           $("vbox")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
       };
       $("ovwrap").onclick = (e) => {
-        if (e.target.id === "ov" || e.target.closest("[data-close]")) {
+        if (
+          e.target.id === "ov" ||
+          e.target.closest('.close[data-close="p"]')
+        ) {
           st.p = null;
           render();
         }
