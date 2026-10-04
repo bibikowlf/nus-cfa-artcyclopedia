@@ -138,10 +138,18 @@
         position: relative;
         display: grid;
         place-items: center;
-        font-size: 44px;
-        color: #fff;
-        background: var(--g);
+        background: #d1d5db;
         overflow: hidden;
+      }
+      .unavailable {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: #d1d5db;
+        color: #4b5563;
+        font-size: 18px;
+        font-weight: 700;
       }
       .cover img {
         position: absolute;
@@ -450,11 +458,9 @@
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 12px;
-        background: var(--g, linear-gradient(135deg, #ff5fa2, #ffe14d));
+        background: #d1d5db;
         display: grid;
         place-items: center;
-        font-size: 34px;
-        color: #fff;
       }
       .pshot img {
         position: absolute;
@@ -625,13 +631,6 @@
       const clusters = [
         ...new Set(venuesData.map((v) => v.cluster || "Other Venues")),
       ];
-      const G = [
-          "#4fc3ff,#6fe3c1",
-          "#ff5fa2,#ffe14d",
-          "#6fe3c1,#4fc3ff",
-          "#ffe14d,#ff5fa2",
-        ],
-        EM = ["🎵", "🎨", "🏛️"];
       const $ = (id) => document.getElementById(id),
         esc = (s) =>
           String(s).replace(
@@ -672,9 +671,8 @@
         return out;
       };
       const st = { v: null, p: null };
-      const grad = (i) =>
-        `linear-gradient(135deg,${G[i % G.length].split(",")[0]},${G[i % G.length].split(",")[1]})`;
-      const img = (src, fb) => (src ? `<img src="${esc(src)}" alt="">` : fb);
+      const img = (src, alt = "") =>
+        `<span class="unavailable" role="img" aria-label="Unavailable">Unavailable</span>${src ? `<img src="${esc(src)}" alt="${esc(alt)}" onerror="this.remove()">` : ""}`;
       /* column counts mirror the CSS breakpoints */
       const vc = () => (innerWidth <= 520 ? 1 : innerWidth <= 820 ? 2 : 3),
         pc = () => (innerWidth <= 520 ? 2 : innerWidth <= 820 ? 3 : 4);
@@ -693,7 +691,7 @@
         return `<div class="overlay" id="ov"><section class="panel sub" id="pbox" aria-label="${esc(v.name)} details">
  <button class="close" data-close="p" aria-label="Close">✕</button>
  <div class="ph"><h3 class="t">${esc(v.name)}</h3><small>${esc(v.cluster)}</small></div>
- <div class="pshot">${v.image ? `<img src="${esc(v.image)}" alt="${esc(v.name)}">` : "📷"}</div>
+ <div class="pshot">${img(v.image, v.name)}</div>
  <dl class="dl">
   <dt>Capacity</dt><dd>${v.capacity ? `${v.capacity} people` : "Not stated"}</dd>
   <dt>Hours</dt><dd>${esc(v.hours || "Not stated")}</dd>
@@ -744,7 +742,7 @@
           const clusterImage =
             clustersData.find((item) => item.cluster === clusterName)?.image ||
             "";
-          return `<button class="card" data-i="${i}" aria-expanded="${i === st.v}" aria-controls="vbox"><div class="cover" style="--g:${grad(i)}">${img(clusterImage, EM[i % 3])}</div><h2>${esc(clusterName)}</h2><small>${entries.length} venues</small></button>`;
+          return `<button class="card" data-i="${i}" aria-expanded="${i === st.v}" aria-controls="vbox"><div class="cover">${img(clusterImage)}</div><h2>${esc(clusterName)}</h2><small>${entries.length} venues</small></button>`;
         });
         $("grid").innerHTML = layout(cards, n, st.v ?? -1, (c, m) =>
           venueBox(c, m),
