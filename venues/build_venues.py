@@ -44,7 +44,7 @@ def format_image_path(raw_img: str) -> str:
         return raw_img.replace("\\", "/")
     
     # Prepend folder path for clean folder separation
-    return f"../photos/venue/{raw_img}"
+    return f"https://raw.githubusercontent.com/henghengyh/nus-cfa-artcyclopedia/main/photos/venue/{raw_img}"
 
 
 def read_csv_rows(csv_path: str):
