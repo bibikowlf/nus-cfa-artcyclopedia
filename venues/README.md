@@ -97,6 +97,7 @@ Faculty Spaces,Science,Lecture Theatres;;Seminar Rooms;;Foyers
 ```
 
 > 💡 **Note**: Leave the `subcategory` cell empty for top-level clusters without internal sub-groups.
+> In text fields such as `hours`, `booking`, and `notes`, use `\n` in the CSV to insert a line break.
 
 ### 2. The HTML Injection Target (`venue.html`)
 
