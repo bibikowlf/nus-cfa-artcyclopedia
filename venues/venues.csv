@@ -24,22 +24,23 @@ UTown,Auditorium,UTown Auditorium 3,255,"Mon-Fri 07:00-22:00
 Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Located at Level B1, College of Alice & Peter Tan. See [University Town Teaching Facilities Auditoriums & Lecture Halls](https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf) for venue description.",
 UTown,Auditorium,Ngee Ann Kongsi Auditorium,200,"Mon-Fri 07:00-22:00
 Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Located at Level 2, Education Resource Centre. See [University Town Teaching Facilities Auditoriums & Lecture Halls](https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf) for venue description.",
-UTown,DA/DS,Dance Atelier 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,The facility is laid with dance mats and users should not wear their shoes into the facility.,
-UTown,DA/DS,Function Hall/Dance Atelier 2,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,
-UTown,DA/DS,Dance Studio,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,
-UTown,Practice Spaces,Practice Room L1,15,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with plastic mirrors,Practice_Room_with_mirror.jpg
+UTown,DA/DS,Dance Atelier 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,The facility is laid with dance mats and users should not wear their shoes into the facility.,Dance_Arteliar_1.jfif
+UTown,DA/DS,Function Hall/Dance Atelier 2,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,dance-studio.jpg
+UTown,DA/DS,Dance Studio,70,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,dance-studio.jpg
+UTown,Practice Spaces,Practice Room 1,50,Mon-Sun 07:00-22:00,utown@nus.edu.sg,,PracticeRoom1.jfif
+UTown,Practice Spaces,Practice Room L1,15,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,PracticeRoom_L1.jfif
 UTown,Practice Spaces,Practice Room L3,20,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with plastic mirrors.,Practice_Room_with_mirror.jpg
 UTown,Practice Spaces,Practice Room M1,3,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with plastic mirrors.,Practice_Room_with_mirror.jpg
 UTown,Practice Spaces,Practice Room M2,5,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with piano.,Practice_Room_piano.jpg
 UTown,Practice Spaces,Practice Room M3,4,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Practice_Room_wt_mirror.jpg
-UTown,Practice Spaces,Practice Room M4,5,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with piano.,Practice_Room_piano.jpg
+UTown,Practice Spaces,Practice Room M4,5,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with piano.,PracticeRoom_m4.jfif
 UTown,Practice Spaces,Practice Room M5,5,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with plastic mirrors.,Practice_Room_with_mirror.jpg
 UTown,Practice Spaces,Studio M1,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_with_mirror.jpg
-UTown,Practice Spaces,Studio M2,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_wt_mirror.jpg
-UTown,Practice Spaces,Studio M3,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_wt_mirror.jpg
-UTown,Practice Spaces,Studio M4,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_wt_mirror.jpg
+UTown,Practice Spaces,Studio M2,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_without_mirror.jfif
+UTown,Practice Spaces,Studio M3,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_without_mirror.jfif
+UTown,Practice Spaces,Studio M4,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_without_mirror.jfif
 UTown,Practice Spaces,Studio M5,3,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),Equipped with plastic mirrors.,Studio_with_mirror.jpg
-UTown,Practice Spaces,Studio M6,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_wt_mirror.jpg
+UTown,Practice Spaces,Studio M6,2,Mon-Sun 07:00-22:00,[Facilities Booking System](https://utownfbs.nus.edu.sg/utown/apptop.aspx),,Studio_without_mirror.jfif
 Wan Boo Sow Chinese Library,Exhibition Spaces,Chinese Library Corridor (section 1 & 2),10 (per section),Subject to request,hanmingguang@nus.edu.sg,Email hanmingguang@nus.edu.sg and CC your group manager and liyana.a@nus.edu.sg. ,
 Central Library,Exhibition Spaces,"Art Buzz, Central Library L1",,Mon-Sat 00:00-24:00,[Space Availability - Central Library](https://nus.libcal.com/spaces?lid=7406.),Venue details are listed [here](https://nus.libcal.com/space/53052).,art-buzz-central-library-l1.jpg
 Central Library,Exhibition Spaces,"Exhibition Space, L1 (near the Main Entrance)",,Mon-Sat 00:00-24:00,[Space Availability - Central Library](https://nus.libcal.com/spaces?lid=7406.),Venue details are listed [here](https://nus.libcal.com/space/54894).,exhibition-space-l1-main-entrance.jpeg
