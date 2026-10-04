@@ -22,6 +22,10 @@ def js_string_literal(value: str) -> str:
     return json.dumps(str(value or ""), ensure_ascii=False)
 
 
+def expand_escaped_newlines(value: str) -> str:
+    return re.sub(r"\\r\\n|\\n|\\r", "\n", str(value or ""))
+
+
 def parse_capacity(raw_cap: str) -> int:
     """Extracts the highest integer found in a capacity string (e.g., '1607 - 1710 pax' -> 1710)."""
     if not raw_cap:
@@ -39,8 +43,8 @@ def format_image_path(raw_img: str) -> str:
     if "/" in raw_img or "\\" in raw_img:
         return raw_img.replace("\\", "/")
     
-    # Prepend relative folder path for clean folder separation
-    return f"../photos/venues/{raw_img}"
+    # Prepend folder path for clean folder separation
+    return f"../photos/venue/{raw_img}"
 
 
 def read_csv_rows(csv_path: str):
@@ -83,9 +87,9 @@ def build_venues_js_block(rows, var_name):
         capacity = parse_capacity(raw_cap)
         
         # Extract additional fields
-        booking = row.get("booking") or ""
-        hours = row.get("hours") or ""
-        notes = row.get("notes") or row.get("remarks") or ""
+        booking = expand_escaped_newlines(row.get("booking") or "")
+        hours = expand_escaped_newlines(row.get("hours") or "")
+        notes = expand_escaped_newlines(row.get("notes") or row.get("remarks") or "")
 
         # Process image path
         raw_image = row.get("image") or ""
@@ -115,7 +119,7 @@ def build_clusters_js_block(rows):
         item_str = (
             f'{{ '
             f'cluster: {js_string_literal(row.get("cluster", ""))}, '
-            f'notes: {js_string_literal(row.get("notes", ""))}, '
+            f'notes: {js_string_literal(expand_escaped_newlines(row.get("notes", "")))}, '
             f'image: {js_string_literal(format_image_path(row.get("image", "")))} '
             f'}}'
         )
