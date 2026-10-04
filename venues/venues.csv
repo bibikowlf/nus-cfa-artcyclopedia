@@ -14,8 +14,8 @@ UTown,Amphitheatre / Open Space ,Town Plaza Auditorium Foyer,50,24/7,utown@nus.e
 UTown,Amphitheatre / Open Space ,Town Plaza Informal Study Area,100,24/7,utown@nus.edu.sg,,
 UTown,Amphitheatre / Open Space ,Town Plaza Outdoor Area (Outside Foodcourt),50,24/7,utown@nus.edu.sg,,
 UTown,Amphitheatre / Open Space ,UT Foyer,50,24/7,utown@nus.edu.sg,,
-UTown,Amphitheatre / Open Space ,ERC Open Study Area,50,24/7,utown@nus.edu.sg,,
-UTown,Amphitheatre / Open Space ,ERC Roof Deck,100,24/7,utown@nus.edu.sg,,
+UTown,Amphitheatre / Open Space ,ERC Open Study Area,50,24/7,utown@nus.edu.sg,,ERC_Open_Study_Area.jpg
+UTown,Amphitheatre / Open Space ,ERC Roof Deck,100,24/7,utown@nus.edu.sg,,ERC_Roof_Deck.jpg
 UTown,Auditorium,UTown Auditorium 1,448,"Mon-Fri 07:00-22:00
 Sat-Sun & Public Holiday 07:00-17:00",utown@nus.edu.sg,"Located at Level 1, Town Plaza. See [University Town Teaching Facilities Auditoriums & Lecture Halls](https://uci.nus.edu.sg/wp-content/uploads/2026/08/Auditoriums-in-UTown.pdf for venue description).",
 UTown,Auditorium,UTown Auditorium 2,466,"Mon-Fri 07:00-22:00
@@ -89,23 +89,23 @@ Yusof Ishak House,Music Studio,Rhythm,20,Mon-Sun 08:00-22:00,[REBOKS](https://re
 Yusof Ishak House,Dance Studio,Flow,40,Mon-Sun 08:00-22:00,[REBOKS](https://reboks.nus.edu.sg/),,Dance_Studio.jpg
 Yusof Ishak House,Dance Studio,Motion,40,Mon-Sun 08:00-22:00,[REBOKS](https://reboks.nus.edu.sg/),,Dance_Studio.jpg
 Yusof Ishak House,Dance Studio,StepUp,40,Mon-Sun 08:00-22:00,[REBOKS](https://reboks.nus.edu.sg/),,Dance_Studio.jpg
-University Cultural Centre,Performance Space,Ho Bee Auditorium,1607,Subject to request,Refer to [description](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ho-bee-auditorium/).,,
-University Cultural Centre,Performance Space,Theatre,425,Subject to request,Refer to [description](https://uci.nus.edu.sg/campus-life/university-cultural-centre/theatre/).,,
+University Cultural Centre,Performance Space,Ho Bee Auditorium,1607,Subject to request,Select ['Submit Booking? Enquiry'](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ho-bee-auditorium/).,,ho-bee-auditorium.jpg
+University Cultural Centre,Performance Space,Theatre,425,Subject to request,Select ['Submit Booking? Enquiry'](https://uci.nus.edu.sg/campus-life/university-cultural-centre/theatre/).,,ucc-theatre.jpg
 University Cultural Centre,Atrium,Atrium,"120 (banquet setting)
-200 (standing)",Subject to request,Refer to [description](https://uci.nus.edu.sg/campus-life/university-cultural-centre/atrium/).,,
-University Cultural Centre,Ancillary Space,Dance Studio,80,Subject to request,Refer to [description](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/).,Has sprung timber flooring covering an area of 24m x 15m layered with Jumbo dance mats. Equipped with built-in ceiling speakers,
-University Cultural Centre,Ancillary Space,Function Room 1 & 2,50,Subject to request,Refer to [description](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/).,"Equipped with mirrors, soundproofing materials and flooring suitable for rehearsals.",
-Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Concert Hall,573,Mon-Sun 09:00-23:00,musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/).,conservatory-concert-hall.jpg
-Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Orchestra Hall,150,Mon-Sun 09:00-23:00,musvenues@nus.edu.sg,Refer to venue details listed [here](http://ystmusic.nus.edu.sg/facilities-conservatory-orchestra-hall/).,conservatory-orchestra-hall.jpg
-Yong Siew Toh Conservatory of Music,Performance Space,Steven Baxter Recital Studio,70,Mon-Sun 09:00-23:00,musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-steven-baxter-recital-studio/).,steven-baxter.jpeg
+200 (standing)",Subject to request,Select ['Submit Booking? Enquiry'](https://uci.nus.edu.sg/campus-life/university-cultural-centre/atrium/).,,ucc-atrium.jpg
+University Cultural Centre,Ancillary Space,Dance Studio,80,Subject to request,Select [Submit Booking? Enquiry](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/).,Has sprung timber flooring covering an area of 24m x 15m layered with Jumbo dance mats. Equipped with built-in ceiling speakers,ucc-dance-studio.jpg
+University Cultural Centre,Ancillary Space,Function Room 1 & 2,50,Subject to request,Select [Submit Booking? Enquiry](https://uci.nus.edu.sg/campus-life/university-cultural-centre/ancillary-spaces/).,"Equipped with mirrors, soundproofing materials and flooring suitable for rehearsals.",ucc-function-room.jpg
+Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Concert Hall,573,Mon-Sun 09:00-23:00,Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/).,conservatory-concert-hall.jpg
+Yong Siew Toh Conservatory of Music,Performance Space,Conservatory Orchestra Hall,150,Mon-Sun 09:00-23:00,Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-orchestra-hall/).,conservatory-orchestra-hall.jpg
+Yong Siew Toh Conservatory of Music,Performance Space,Steven Baxter Recital Studio,70,Mon-Sun 09:00-23:00,Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-steven-baxter-recital-studio/).,steven-baxter.jpeg
 Yong Siew Toh Conservatory of Music,Practice Spaces,Ensemble Rooms,35,"Mon-Sun 09:00-23:00 (Commercial)
-Mon-Sun 08:00-23:30 (YST Student)",musvenues@nus.edu.sg,"Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/).
+Mon-Sun 08:00-23:30 (YST Student)",Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,"Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-ensemble-rooms/).
 Only Ensemble Rooms 3 to 8 are open for bookings by students.",ensemble-room.jpg
-Yong Siew Toh Conservatory of Music,Recording Studio,Recording Studio,,Subject to request,musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-concert-hall/).,recording-studio.jpeg
-Yong Siew Toh Conservatory of Music,Reception,Foyer / Lounge / Balcony,,Subject to request,musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-foyer/).,facilities-conservatory-foyer.jpg
-Shaw Foundation Alumni House,Auditorium,Auditorium,298,Mon-Sat 07:30-22:00,Refer to [description](https://alum.nus.edu.sg/fbs/enquire.aspx?id=14).," Visit the [SFAH availability and enquiry page](https://alum.nus.edu.sg/fbs/venue.aspx?id=14) to check venue availability. Click 'Submit Enquiry Form' to land on the booking page.
+Yong Siew Toh Conservatory of Music,Recording Studio,Recording Studio,,Subject to request,Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-recording-studio/).,recording-studio.jpeg
+Yong Siew Toh Conservatory of Music,Reception,Foyer / Lounge / Balcony,,Subject to request,Complete? [booking form](https://www.ystmusic.nus.edu.sg/facilities-venues/) and send to musvenues@nus.edu.sg,Refer to venue details listed [here](https://www.ystmusic.nus.edu.sg/facilities-conservatory-foyer/).,facilities-conservatory-foyer.jpg
+Shaw Foundation Alumni House,Auditorium,Auditorium,298,Mon-Sat 07:30-22:00,[Enquiry Form](https://alum.nus.edu.sg/fbs/enquire.aspx?id=14)," Visit the [SFAH availability and enquiry page](https://alum.nus.edu.sg/fbs/venue.aspx?id=14) to check venue availability. Click 'Submit Enquiry Form' to land on the booking page.
 
 For venue rates, visit the [Rates and Discounts page](https://uci.nus.edu.sg/campus-life/campus-services/sfah/rates-and-discounts/) and download the [Venue Kit](https://uci.nus.edu.sg/wp-content/uploads/2026/04/SFAH-VENUE-KIT-Apr-2026-2.pdf).",sfah-auditorium.png
 Yale-NUS College,Performance Space,Yale-NUS College Hall,339,Subject to request,nuscollege@nus.edu.sg,,yale-nus-college-hall.webp
-University Hall,Open Spaces,UHall Corridor (section1 & 2),10 per section ,Mon-Sun 6pm to 10pm,Refer to [description](https://aces.nus.edu.sg/fbs/jsp/safeLandingPage.jsp?).,"For weekday bookings: FBS booking can only be accessed by FBS reps.
+University Hall,Open Spaces,UHall Corridor (section1 & 2),10 per section ,Mon-Sun 6pm to 10pm,[Facilities Booking System](https://aces.nus.edu.sg/fbs/jsp/safeLandingPage.jsp?) / admincfa@nus.edu.sg,"For weekday bookings: FBS booking can only be accessed by FBS reps.
 For weekend bookings: Please go through OSA-CFA by emailing admincfa@nus.edu.sg ",uhall.jpg
