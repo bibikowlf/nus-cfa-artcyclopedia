@@ -787,9 +787,9 @@
         } else return;
         render();
         if (st.p !== null) {
-          requestAnimationFrame(() =>
-            $("pbox")?.scrollIntoView({ behavior: "smooth", block: "center" }),
-          );
+          requestAnimationFrame(() => {
+            window.parent.postMessage({ type: "venue-popup-open" }, "*");
+          });
         } else if (st.v !== null) {
           $("vbox")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }

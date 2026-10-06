@@ -1,4 +1,13 @@
 <script>
+    window.addEventListener("message", (event) => {
+    if (event.data?.type !== "venue-popup-open") return;
+
+    const frame = Array.from(document.querySelectorAll("iframe")).find(
+      (item) => item.contentWindow === event.source
+    );
+
+    frame?.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
 (function () {
   function init() {
     if (document.getElementById('floating-site-search')) return;
@@ -10,7 +19,7 @@
 
     var style = document.createElement('style');
     style.textContent = `
-      #floating-site-search{position:fixed;top:130px;right:20px;z-index:999999;width:min(325px,calc(100vw - 40px));font-family:Poppins,Arial,sans-serif;color:#1e293b}
+      #floating-site-search{position:fixed;top:100px;right:20px;z-index:999999;width:min(325px,calc(100vw - 40px));font-family:Poppins,Arial,sans-serif;color:#1e293b}
       #floating-site-search .input-container{position:relative}
       #floating-site-search input {box-sizing: border-box;width: 100%;padding: 14px 44px;font: 15px Poppins, Arial, sans-serif;color: #0f172a;background: rgba(255, 255, 255, 0.58);border: 1px solid rgba(255, 255, 255, 0.7);border-radius: 14px;outline: 0;backdrop-filter: blur(16px) saturate(150%);-webkit-backdrop-filter: blur(16px) saturate(150%);box-shadow:0 8px 24px rgba(15, 23, 42, 0.12),inset 0 1px 0 rgba(255, 255, 255, 0.8);}
       #floating-site-search input:focus{border-color:rgba(0,61,124,.6);box-shadow:0 0 0 4px rgba(0,61,124,.08),0 12px 30px rgba(0,0,0,.08)}
