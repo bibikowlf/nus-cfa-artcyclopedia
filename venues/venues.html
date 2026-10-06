@@ -43,7 +43,7 @@
       }
       body {
         margin: 0;
-        background: #fff;
+        background: #f1f1f1;
         color: var(--ink);
         font-family: var(--font-body);
         font-weight: 500;
@@ -786,8 +786,13 @@
           st.p = null;
         } else return;
         render();
-        if (st.p === null && st.v !== null)
+        if (st.p !== null) {
+          requestAnimationFrame(() =>
+            $("pbox")?.scrollIntoView({ behavior: "smooth", block: "center" }),
+          );
+        } else if (st.v !== null) {
           $("vbox")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
       };
       $("ovwrap").onclick = (e) => {
         if (
