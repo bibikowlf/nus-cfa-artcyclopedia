@@ -16,12 +16,6 @@
       <div class="filter-group" id="orgFilterGroup">
         <!-- Populated automatically from groupData's "org" field, no need to edit manually -->
       </div>
-
-      <!-- 4. FEATURED RESOURCES -->
-      <div class="featured-resources">
-        <h3>Featured Resources</h3>
-        <a href="https://nusu.sharepoint.com/:w:/s/NUSCulturalActivityClub/IQBdMe4V-rC-SL5KeFJFhyzCAWVu8lp9afUaSKVmyKyiCDk?e=4Tw74I" class="resource-link" target="_blank">Guide: Finding Groups on NUSync</a>
-      </div>
     </aside>
 
     <!-- 3. RESULTS LIST -->
@@ -76,13 +70,14 @@
 
   /* Sidebar styling */
   .filter-sidebar {
-    background: var(--bg-light);
+    background: #f2ecc5;
     padding: 20px;
     border-radius: 8px;
     height: fit-content;
   }
-  .filter-sidebar h3 { margin-top: 0; font-size: 1.1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
+  .filter-sidebar h3 { margin-top: 0; font-size: 1.1rem; border-bottom: 2px solid #f2ecc5; padding-bottom: 8px; }
   .filter-group label { display: block; margin: 12px 0; cursor: pointer; }
+  .filter-group input[type="checkbox"] { accent-color: #dd10ae; }
   .filter-group:empty::after { content: "No organisations loaded yet."; font-size: 0.8rem; color: #999; }
 
   .featured-resources { margin-top: 30px; }
@@ -98,6 +93,7 @@
     font-size: 1rem;
     margin-bottom: 20px;
     box-sizing: border-box;
+    background: #f2ecc5;
   }
 
   .groups-grid {
@@ -111,7 +107,7 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 20px;
-    background: #fff;
+    background: #f2ecc5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
