@@ -43,7 +43,7 @@
       }
       body {
         margin: 0;
-        background: #f1f1f1;
+        background: transparent;
         color: var(--ink);
         font-family: var(--font-body);
         font-weight: 500;
@@ -140,7 +140,7 @@
         box-shadow: 8px 9px 0 var(--mint);
       }
       .card[aria-expanded="true"] {
-        background: var(--sun);
+        background: #fff;
         box-shadow: 6px 6px 0 var(--pink);
       }
       .cover {
@@ -201,8 +201,8 @@
         transform: translateY(-3px);
       }
       .place[aria-expanded="true"] {
-        background: var(--pink);
-        color: #fff;
+        background: #fff;
+        color: var(--ink);
         box-shadow: 4px 4px 0 var(--ink);
       }
       .place b {
@@ -228,7 +228,7 @@
       .panel.sub {
         border-radius: 20px;
         box-shadow: 6px 6px 0 var(--sky);
-        background: #f4fbff;
+        background: #fff;
       }
       @keyframes open {
         from {
