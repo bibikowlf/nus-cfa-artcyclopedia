@@ -80,7 +80,7 @@ def build_venues_js_block(rows, var_name):
         subcategory = row.get("subcategory") or ""
         
         # Handle header variations for venue name
-        venue_name = row.get("venue") or ""
+        venue_name = expand_escaped_newlines(row.get("venue") or "")
         
         # Parse capacity flexibly
         raw_cap = row.get("capacity", "")
