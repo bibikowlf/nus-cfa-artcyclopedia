@@ -92,8 +92,8 @@ def main():
             sys.exit(f"Error: requested field(s) not found in CSV header: {missing}\n"
                      f"CSV header columns are: {fieldnames}")
     else:
-        # Enforces order matching your template keys: title, photo, url
-        preferred_order = ["title", "photo", "url"]
+        # Enforces order matching your template keys: title, photo, url, button
+        preferred_order = ["title", "photo", "url", "button"]
         fields = [f for f in preferred_order if f in fieldnames] + [f for f in fieldnames if f not in preferred_order]
 
     js_block = build_js_block(rows, fields, args.var)

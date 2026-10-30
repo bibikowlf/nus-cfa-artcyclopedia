@@ -214,12 +214,12 @@
   document.addEventListener("DOMContentLoaded", () => {
     
     // 1. JSON Array containing all active CAC Events
-                                                const eventsData = [
-      { "title": "Overdrive", "photo": " overdrive.jpg", "url": " https://www.instagram.com/overdrive_nuscac/" },
-      { "title": "Creator's Grant", "photo": "creators-grant.png", "url": "https://forms.cloud.microsoft/r/c32QSQ6Wy6" },
-      { "title": "Workshops", "photo": "workshops.png", "url": "https://forms.cloud.microsoft/r/gZjXPz424T" },
-      { "title": "Supernova", "photo": " supernova.jpg", "url": "https://www.instagram.com/nussupernova/?hl=en" },
-      { "title": "NUS Events", "photo": "nus-events.jpg", "url": "https://osa.nus.edu.sg/?s=arts&post_type=event" }
+                                                        const eventsData = [
+      { "title": "Overdrive", "photo": " overdrive.jpg", "url": " https://www.instagram.com/overdrive_nuscac/", "button": "Find Out More" },
+      { "title": "Creator's Grant", "photo": "creators-grant.png", "url": "https://forms.cloud.microsoft/r/c32QSQ6Wy6", "button": "Apply Now" },
+      { "title": "Workshops", "photo": "workshops.png", "url": "https://forms.cloud.microsoft/r/gZjXPz424T", "button": "Apply Now" },
+      { "title": "Supernova", "photo": " supernova.jpg", "url": "https://www.instagram.com/nussupernova/?hl=en", "button": "Find Out More" },
+      { "title": "NUS Events", "photo": "nus-events.jpg", "url": "https://osa.nus.edu.sg/?s=arts&post_type=event", "button": "Find Out More" }
     ];
 
     // Base path constructed to pull raw images from GitHub Repository
@@ -246,7 +246,7 @@
             </div>
             <div class="event-details">
               <h4 class="event-title">${title}</h4>
-              <a href="${destinationLink}" class="ig-button" target="_blank">Find Out More</a>
+              <a href="${destinationLink}" class="ig-button" target="_blank">${event.button || "Find Out More"}</a>
             </div>
           </div>
         `;
