@@ -255,14 +255,20 @@
 
     // 3. Setup Arrow Button Scrolling Interaction
     function setupNavigation() {
-      const scrollOffset = 324; // Width of card (300px) + gap (24px)
+      function getScrollOffset() {
+        const firstCard = carousel.querySelector(".event-card");
+        if (!firstCard) return 0;
+
+        const gap = parseFloat(window.getComputedStyle(carousel).columnGap) || 0;
+        return firstCard.getBoundingClientRect().width + gap;
+      }
 
       nextBtn.addEventListener("click", () => {
-        carousel.scrollBy({ left: scrollOffset, behavior: "smooth" });
+        carousel.scrollBy({ left: getScrollOffset(), behavior: "smooth" });
       });
 
       prevBtn.addEventListener("click", () => {
-        carousel.scrollBy({ left: -scrollOffset, behavior: "smooth" });
+        carousel.scrollBy({ left: -getScrollOffset(), behavior: "smooth" });
       });
     }
 
