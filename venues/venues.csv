@@ -1,14 +1,14 @@
 Cluster,Subcategory,Venue,Capacity,Hours,Booking,Notes,Image
 UTown,Amphitheatre / Open Space ,"Area Outside LT52, LT53",50,24/7,utown@nus.edu.sg,,area-outside-lt52-53.jpg
 UTown,Amphitheatre / Open Space ,Courtyard,100,24/7,utown@nus.edu.sg,,erc-courtyard.jpg
-UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside Auditorium,50,24/7,utown@nus.edu.sg,,src.jpeg
-UTown,Amphitheatre / Open Space ,Internal Street Level 1 Outside LTS,50,24/7,utown@nus.edu.sg,,src.jpeg
-UTown,Amphitheatre / Open Space ,Internal Street Level 2,50,24/7,utown@nus.edu.sg,,src.jpeg
-UTown,Amphitheatre / Open Space ,Internal Street Level 3,100,24/7,utown@nus.edu.sg,,src.jpeg
-UTown,Amphitheatre / Open Space ,Open Area (Near Auditorium),50,24/7,utown@nus.edu.sg,,erc.jpg
-UTown,Amphitheatre / Open Space ,Open Area (Near Seminar Wing),50,24/7,utown@nus.edu.sg,,erc.jpg
-UTown,Amphitheatre / Open Space ,Open Area (Near The Study),50,24/7,utown@nus.edu.sg,,erc.jpg
-UTown,Amphitheatre / Open Space ,Open Area (Outside SR4 &5),50,24/7,utown@nus.edu.sg,,erc.jpg
+UTown,Amphitheatre / Open Space ,SRC Internal Street Level 1 Outside Auditorium,50,24/7,utown@nus.edu.sg,,src.jpg
+UTown,Amphitheatre / Open Space ,SRC Internal Street Level 1 Outside LTS,50,24/7,utown@nus.edu.sg,,src.jpg
+UTown,Amphitheatre / Open Space ,SRC Internal Street Level 2,50,24/7,utown@nus.edu.sg,,src.jpg
+UTown,Amphitheatre / Open Space ,SRC Internal Street Level 3,100,24/7,utown@nus.edu.sg,,src.jpg
+UTown,Amphitheatre / Open Space ,ERC Open Area (Near Auditorium),50,24/7,utown@nus.edu.sg,,erc.jpg
+UTown,Amphitheatre / Open Space ,ERC Open Area (Near Seminar Wing),50,24/7,utown@nus.edu.sg,,erc.jpg
+UTown,Amphitheatre / Open Space ,ERC Open Area (Near The Study),50,24/7,utown@nus.edu.sg,,erc.jpg
+UTown,Amphitheatre / Open Space ,ERC Open Area (Outside SR4 &5),50,24/7,utown@nus.edu.sg,,erc.jpg
 UTown,Amphitheatre / Open Space ,Town Green,400,24/7,utown@nus.edu.sg,Check guideline on [Town Green Usage Policy](https://uci.nus.edu.sg/wp-content/uploads/2024/02/Usage-of-Town-Green.pdf).,utown.jpg
 UTown,Amphitheatre / Open Space ,Town Plaza Auditorium Foyer,50,24/7,utown@nus.edu.sg,,town-plaza-audi-foyer.jpg
 UTown,Amphitheatre / Open Space ,Town Plaza Informal Study Area,100,24/7,utown@nus.edu.sg,,utown-informal-study-area.jpg
